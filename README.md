@@ -1,2 +1,6 @@
 # Quan-ly-cua-hang-DVD
-tạo ra 1 hệ thống có quản lý các đĩa DVD như xem số lượng tồn kho, đánh giá mức dộ ưa chuộng, cho khách thuê/ trả đĩa, quản lý số khách hàng thuê, tổng doanh thu.
+Tên đề tài: Quản lý cửa hàng đĩa DVD (BST).
+
+Danh sách thành viên nhóm và phân công nhiệm vụ.
+
+Hướng dẫn chạy chương trình.
