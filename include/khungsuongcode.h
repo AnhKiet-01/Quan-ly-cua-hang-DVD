@@ -1,5 +1,5 @@
-#ifndef CAU_TRUC_DU_LIEU_H
-#define CAU_TRUC_DU_LIEU_H
+#ifndef KHUNG_SUONG_CODE_H
+#define KHUNG_SUONG_CODE_H
 
 #include <iostream>
 #include <string>
