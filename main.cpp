@@ -1,5 +1,5 @@
 #include <iostream>
-#include "include/khungsuongcode.h"
+#include "include/khungsuoncode.h"
 
 using namespace std;
 int main() {
