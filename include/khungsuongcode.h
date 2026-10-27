@@ -44,6 +44,7 @@ class tree {
     string DanhDiaDoUaChuong( const ThongTinDia dia);
     sting DeXuatNhapHang(const thongTinDia dia);
     bool ChinhHang(const ThongTinDia dia);
+    void GiaiPhongCay(Node* p);
 };
 
 // =======================================================
