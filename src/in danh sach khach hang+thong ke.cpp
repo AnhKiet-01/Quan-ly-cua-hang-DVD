@@ -1,5 +1,8 @@
+#include <iostream>
+#include <string>
+#include <iomanip>
 #include "../include/khungsuoncode.h"
-
+using namespace std;
 
 //  IN DANH SACH PHIEU THUE (case 5)
 
@@ -54,23 +57,33 @@ void HeThongCuaHang::inDanhSachPhieuThue() {
 
 
 void HeThongCuaHang::inThongKe() {
-    int tongPhieu = 0, dangMuon = 0, daTraXong = 0, traTreHan = 0;
-
+    int tongPhieu = 0, dangMuon = 0, daTra = 0, traTreHan = 0;
+    double tongDoanhThuCuaHang = 0;
+ 
     for (PhieuThue* p = danhSachPhieu; p != NULL; p = p->tiepTheo) {
         tongPhieu++;
+        double tienQuyDinh = p->soNgayThue * p->donGiaNgay;
+ 
         if (p->daTra) {
-            daTraXong++;
-            if (p->soNgayThucTe > p->soNgayThue) traTreHan++;
+            daTra++;
+            double phiTre = 0;
+            if (p->soNgayThucTe > p->soNgayThue) {
+                traTreHan++;
+                phiTre = (p->soNgayThucTe - p->soNgayThue) * p->donGiaNgay * 1.5;
+            }
+            tongDoanhThuCuaHang += tienQuyDinh + phiTre;
         } else {
             dangMuon++;
         }
     }
-
-    cout << "\nTHONG KE TONG QUAN \n";
-    cout << left << setw(28) << "Tong so phieu thue:"  << tongPhieu << "\n";
-    cout << left << setw(28) << "Phieu dang muon:"     << dangMuon << "\n";
-    cout << left << setw(28) << "Phieu da tra:"        << daTraXong << "\n";
-    cout << left << setw(28) << "Phieu tra tre han:"   << traTreHan << "\n";
-    cout << left << setw(28) << "Tong doanh thu:"
-         << fixed << setprecision(0) << tongDoanhThu << " d\n";
+ 
+    cout << "\n=============== THONG KE TONG QUAN ===============\n";
+    cout << left << setw(45) << "Tong so phieu thue:"                 << tongPhieu << "\n";
+    cout << left << setw(45) << "So phieu dang cho khach tra:"        << dangMuon << "\n";
+    cout << left << setw(45) << "So phieu da tra:"                    << daTra << "\n";
+    cout << left << setw(45) << "So phieu tra tre han:"               << traTreHan << "\n";
+    cout << left << setw(45) << "Tong doanh thu cua hang (da tra):"   
+         << (long long)tongDoanhThuCuaHang << " d\n";
 }
+ 
+#endif
