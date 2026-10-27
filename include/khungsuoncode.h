@@ -25,40 +25,45 @@ struct ThongTinDia {
 };
 
 // Node của cây BST
-typedef struct node {
+ struct Node {
     ThongTinDia data;
     Node* left;
     Node* right;
 
-    Node(ThongTinDia dia) : data(dia), left(NULL), right(NULL) {}
-}Node;
+    Node (ThongTinDia dia) : data(dia), left(NULL), right(NULL) {}
+};
 
 // =======================================================
 // 2. CÂY NHỊ PHÂN TÌM KIẾM (BST) QUẢN LÝ KHO ĐĨA
 // =======================================================
 class tree {
 private:
-    Node* root;
     Node* ThemDiaMoi(Node* p, ThongTinDia dia){
         if(p == NULL) return new Node(dia);
-        if(dia.maDia < p->data.madia) p->left = ThemDiaMoi(p->left, dia);
+        if(dia.maDia < p->data.maDia) p->left = ThemDiaMoi(p->left, dia);
         else if(dia.maDia > p->data.maDia) p->right = ThemDiaMoi(p->right, dia);
         else{
-            cout << "\n Ma dia da ton tai. khong the the dia moi.\n"
+            cout << "\n Ma dia da ton tai. khong the the dia moi.\n";
         }
         return p;
     };
     void DanhSachKhoDia(Node* p);
     Node* timkiem(Node* p, int maDia);
-    void GiaiPhongCay(Node* p);
+    void GiaiPhongCay(Node* p){
+    	if(p!=NULL){
+    		GiaiPhongCay(p->left);
+    		GiaiPhongCay(p->right);
+    		delete p;
+		}
+	};
 
 public:
+	Node* root;
     tree() : root(NULL) {}
     ~tree() { GiaiPhongCay(root); }
     void ThemDiaMoi(ThongTinDia dia);
     void DanhSachKhoDia();
     Node* timkiem(int maDia);
-    Node* getRoot() const { return root; }
     string DanhGiaDoUaChuong(const ThongTinDia dia);
     string DeXuatNhapHang(const ThongTinDia dia);
     string LaChinhHang(const ThongTinDia dia);

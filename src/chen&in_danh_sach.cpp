@@ -3,6 +3,7 @@
 #include "..\include\khungsuoncode.h"
 
 using namespace std;
+
 string DanhGiaDoUaChuong (const ThongTinDia dia){
 	int diem = dia.soLuotThue + dia.soLuotBan*2;
 	if(diem >= 100) return "\nSieu Hot";
