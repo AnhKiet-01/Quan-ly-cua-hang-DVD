@@ -9,35 +9,46 @@ void HeThongCuaHang::inDanhSachPhieuThue() {
         return;
     }
 
-    cout << "\n DANH SACH PHIEU THUE \n";
+    cout << "\n-DANH SACH KHACH THUE-\n";
     cout << left << setw(5)  << "STT"
          << setw(8)  << "Ma PT"
          << setw(20) << "Khach hang"
          << setw(13) << "SDT"
          << setw(8)  << "Ma DVD"
-         << setw(12) << "Ngay thue"
-         << setw(12) << "Thuc te"
-         << setw(15) << "Tien thue"
+         << setw(10) << "Ngay thue"
+         << setw(10) << "Thuc te"
+         << setw(14) << "Tien quy dinh"
+         << setw(12) << "Phi tre"
+         << setw(16) << "Tien phai tra"
          << "Trang thai\n";
-    cout << string(103, '-') << "\n";
+    cout << string(120, '-') << "\n";
 
     int stt = 1;
     for (PhieuThue* p = danhSachPhieu; p != NULL; p = p->tiepTheo) {
+        double tienQuyDinh = p->soNgayThue * p->donGiaNgay;
+
+        double phiTre = 0;
+        if (p->daTra && p->soNgayThucTe > p->soNgayThue)
+            phiTre = (p->soNgayThucTe - p->soNgayThue) * p->donGiaNgay * 1.5;
+
+        double tienPhaiTra = tienQuyDinh + phiTre;
+
         cout << left << setw(5)  << stt++
              << setw(8)  << p->maPhieu
              << setw(20) << p->tenKhachHang
              << setw(13) << p->soDienThoai
              << setw(8)  << p->maDia
-             << setw(12) << p->soNgayThue;
+             << setw(10) << p->soNgayThue;
 
-        if (p->daTra) cout << setw(12) << p->soNgayThucTe;
-        else          cout << setw(12) << "-";
+        if (p->daTra) cout << setw(10) << p->soNgayThucTe;
+        else          cout << setw(10) << "-";
 
-        cout << setw(15) << (long long)p->tongTien
-             << (p->daTra ? "Da tra" : "Dang muon") << "\n";
+        cout << setw(14) << (long long)tienQuyDinh
+             << setw(12) << (long long)phiTre
+             << setw(16) << (long long)tienPhaiTra
+             << (p->daTra ? "Da tra" : "Dang muon (tam tinh)") << "\n";
     }
 }
-
 
 //  THONG KE TONG QUAN (case 6)
 
