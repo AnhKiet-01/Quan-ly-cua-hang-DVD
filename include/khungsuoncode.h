@@ -60,7 +60,7 @@ public:
     // Các hàm phân tích nghiệp vụ đĩa DVD
     string DanhGiaDoUaChuong(const ThongTinDia dia);
     string DeXuatNhapHang(const ThongTinDia dia);
-    bool LaChinhHang(const ThongTinDia dia);
+    string LaChinhHang(const ThongTinDia dia);
 };
 // =======================================================
 // 3. QUẢN LÝ GIAO DỊCH THUÊ/TRẢ VÀ QUẦY THU NGÂN
