@@ -1,0 +1,65 @@
+#include "../include/khungsuongcode.h"
+
+
+//  IN DANH SACH PHIEU THUE (case 5)
+
+void HeThongCuaHang::inDanhSachPhieuThue() {
+    if (danhSachPhieu == NULL) {
+        cout << "\nChua co phieu thue nao.\n";
+        return;
+    }
+
+    cout << "\n DANH SACH PHIEU THUE \n";
+    cout << left << setw(5)  << "STT"
+         << setw(8)  << "Ma PT"
+         << setw(20) << "Khach hang"
+         << setw(13) << "SDT"
+         << setw(8)  << "Ma DVD"
+         << setw(12) << "Ngay thue"
+         << setw(12) << "Thuc te"
+         << setw(15) << "Tien thue"
+         << "Trang thai\n";
+    cout << string(103, '-') << "\n";
+
+    int stt = 1;
+    for (PhieuThue* p = danhSachPhieu; p != NULL; p = p->tiepTheo) {
+        cout << left << setw(5)  << stt++
+             << setw(8)  << p->maPhieu
+             << setw(20) << p->tenKhachHang
+             << setw(13) << p->soDienThoai
+             << setw(8)  << p->maDia
+             << setw(12) << p->soNgayThue;
+
+        if (p->daTra) cout << setw(12) << p->soNgayThucTe;
+        else          cout << setw(12) << "-";
+
+        cout << setw(15) << (long long)p->tongTien
+             << (p->daTra ? "Da tra" : "Dang muon") << "\n";
+    }
+}
+
+
+//  THONG KE TONG QUAN (case 6)
+
+
+void HeThongCuaHang::inThongKe() {
+    int tongPhieu = 0, dangMuon = 0, daTraXong = 0, traTreHan = 0;
+
+    for (PhieuThue* p = danhSachPhieu; p != NULL; p = p->tiepTheo) {
+        tongPhieu++;
+        if (p->daTra) {
+            daTraXong++;
+            if (p->soNgayThucTe > p->soNgayThue) traTreHan++;
+        } else {
+            dangMuon++;
+        }
+    }
+
+    cout << "\nTHONG KE TONG QUAN \n";
+    cout << left << setw(28) << "Tong so phieu thue:"  << tongPhieu << "\n";
+    cout << left << setw(28) << "Phieu dang muon:"     << dangMuon << "\n";
+    cout << left << setw(28) << "Phieu da tra:"        << daTraXong << "\n";
+    cout << left << setw(28) << "Phieu tra tre han:"   << traTreHan << "\n";
+    cout << left << setw(28) << "Tong doanh thu:"
+         << fixed << setprecision(0) << tongDoanhThu << " d\n";
+}
