@@ -1,5 +1,4 @@
 #ifndef NGHIEPVUTHUNGAN_H
-#ifndef NGHIEPVUTHUNGAN_H
 #define NGHIEPVUTHUNGAN_H
 
 #include "KhoDiaBST.h"
