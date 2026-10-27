@@ -1,7 +1,7 @@
-#include<iostream>
-#include<string>
-
+#include <iostream>
+#include <string>
 #include "..\include\khungsuoncode.h"
+
 using namespace std;
 string DanhGiaDoUaChuong (const ThongTinDia dia){
 	int diem = dia.soLuotThue + dia.soLuotBan*2;
@@ -27,6 +27,6 @@ void ThemDiaMoi(ThongTinDia dia){
 }
 int main(){
 	tree t;
-	t.
+	t
 	cout<< "\n do ua chuong: "<<t.DanhGiaDoUaChuong ();
 }

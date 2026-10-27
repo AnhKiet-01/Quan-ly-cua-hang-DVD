@@ -25,13 +25,13 @@ struct ThongTinDia {
 };
 
 // Node của cây BST
-struct Node {
+typedef struct node {
     ThongTinDia data;
     Node* left;
     Node* right;
 
     Node(ThongTinDia dia) : data(dia), left(NULL), right(NULL) {}
-};
+}Node;
 
 // =======================================================
 // 2. CÂY NHỊ PHÂN TÌM KIẾM (BST) QUẢN LÝ KHO ĐĨA
@@ -39,8 +39,6 @@ struct Node {
 class tree {
 private:
     Node* root;
-
-    // Các hàm đệ quy chạy ngầm (Private Helper Functions)
     Node* ThemDiaMoi(Node* p, ThongTinDia dia){
         if(p == NULL) return new Node(dia);
         if(dia.maDia < p->data.madia) p->left = ThemDiaMoi(p->left, dia);
@@ -55,17 +53,12 @@ private:
     void GiaiPhongCay(Node* p);
 
 public:
-    // Constructor khởi tạo root = NULL & Destructor tự động dọn RAM
     tree() : root(NULL) {}
     ~tree() { GiaiPhongCay(root); }
-
-    // Các hàm giao tiếp bên ngoài (Public Interface)
     void ThemDiaMoi(ThongTinDia dia);
     void DanhSachKhoDia();
     Node* timkiem(int maDia);
     Node* getRoot() const { return root; }
-
-    // Các hàm phân tích nghiệp vụ đĩa DVD
     string DanhGiaDoUaChuong(const ThongTinDia dia);
     string DeXuatNhapHang(const ThongTinDia dia);
     string LaChinhHang(const ThongTinDia dia);
