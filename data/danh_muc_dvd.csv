@@ -1,5 +1,7 @@
-heThong.themDiaMoi({50, "Inception", "Sony", true, "Moi", 5, 2, 15000, 13000, 12, 4});
-heThong.themDiaMoi({30, "Avatar 2", "Fox", true, "Tot", 1, 3, 20000, 14000, 15, 6});
-heThong.themDiaMoi({70, "Titanic", "Paramount", true, "Tot", 4, 2, 10000, 8500, 4, 1});
-heThong.themDiaMoi({20, "Dia Cu 1990", "Dai Nam", false, "TrayXuoc", 1, 2, 5000, 3500, 0, 0});
-heThong.themDiaMoi({40, "Interstellar", "Warner", true, "Moi", 8, 3, 18000, 13500, 8, 2});
+ThongTinDia DanhSachDia[] = {
+   heThong.themDiaMoi({50, "Inception", "Sony", true, "Moi", 5, 2, 15000, 13000, 12, 4});
+   heThong.themDiaMoi({30, "Avatar 2", "Fox", true, "Tot", 1, 3, 20000, 14000, 15, 6});
+   heThong.themDiaMoi({70, "Titanic", "Paramount", true, "Tot", 4, 2, 10000, 8500, 4, 1});
+   heThong.themDiaMoi({20, "Dia Cu 1990", "Dai Nam", false, "TrayXuoc", 1, 2, 5000, 3500, 0, 0});
+   heThong.themDiaMoi({40, "Interstellar", "Warner", true, "Moi", 8, 3, 18000, 13500, 8, 2});
+}
