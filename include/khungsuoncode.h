@@ -1,5 +1,5 @@
-#ifndef KHUNG_SUONG_CODE_H
-#define KHUNG_SUONG_CODE_H
+#ifndef KHUNG_SUON_CODE_H
+#define KHUNG_SUON_CODE_H
 
 #include <iostream>
 #include <string>
@@ -18,8 +18,8 @@ struct ThongTinDia {
     string tinhTrang;      // Tình trạng: "Moi", "Tot", "TrayXuoc", "Hong"
     int soLuongTon;               // Số lượng tồn khả dụng
     int dinhMucToiThieu;          // Ngưỡng tồn an toàn
-    double giaThue;       // Giá thuê / ngày
-    double giaThiTruong;         // Giá đối thủ lân cận
+    double giaThueTheoNgay;       // Giá thuê / ngày
+    double giaTiemLanCan;         // Giá đối thủ lân cận
     int soLuotThue;               // Lượt khách mượn 
     int soLuotBan;                // Lượt mua
 };
@@ -39,12 +39,28 @@ struct Node {
 class tree {
     public:
     Node* root;
-    void insert(ThongTinDia dia);
-    void InOder(Node* p);
-    string DanhGiaUaChuong(const ThongTinDia dia);
-    string DeXuatNhapHang( const ThongTinDia dia);
-};
 
+    // Chèn đệ quy theo maDia
+    Node* chen(Node* p, ThongTinDia dl);
+
+    // Duyệt In-Order (LNR: Tăng dần theo mã đĩa)
+    void duyetInOrder(Node* p);
+
+    // Giải phóng cây 
+    void giaiPhongCay(Node* p);
+
+public:
+    tree() : root(NULL) {}
+    ~tree() { giaiPhongCay(root); }
+
+    void chen(ThongTinDia dl);
+
+    // Tìm kiếm phần tử theo mã đĩa O(log N)
+    Node* timKiem(int maDia);
+
+    // In danh mục sắp xếp tăng dần theo ID
+    void inDanhMucInOrder();
+};
 // =======================================================
 // 3. QUẢN LÝ GIAO DỊCH THUÊ/TRẢ VÀ QUẦY THU NGÂN
 // =======================================================
