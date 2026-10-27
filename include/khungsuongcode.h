@@ -30,36 +30,20 @@ struct Node {
     Node* left;
     Node* right;
 
-    Node(ThongTinDia dl) : data(dl), left(NULL), right(NULL) {}
+    Node(ThongTinDia dia) : data(dia), left(NULL), right(NULL) {}
 };
 
 // =======================================================
 // 2. CÂY NHỊ PHÂN TÌM KIẾM (BST) QUẢN LÝ KHO ĐĨA
 // =======================================================
 class tree {
-private:
     Node* root;
-
-    // Chèn đệ quy theo maDia
-    Node* chen(Node* p, ThongTinDia dl);
-
-    // Duyệt In-Order (LNR: Tăng dần theo mã đĩa)
-    void duyetInOrder(Node* p);
-
-    // Giải phóng cây 
-    void giaiPhongCay(Node* p);
-
-public:
-    tree() : root(NULL) {}
-    ~tree() { giaiPhongCay(root); }
-
-    void chen(ThongTinDia dl);
-
-    // Tìm kiếm phần tử theo mã đĩa O(log N)
-    Node* timKiem(int maDia);
-
-    // In danh mục sắp xếp tăng dần theo ID
-    void inDanhMucInOrder();
+    void ThemDiaMoi(ThongTinDia dia);
+    void DanhSachKhoDia(Node* p);
+    Node* timkiem(Node* p);
+    string DanhDiaDoUaChuong( const ThongTinDia dia);
+    sting DeXuatNhapHang(const thongTinDia dia);
+    bool ChinhHang(const ThongTinDia dia);
 };
 
 // =======================================================
