@@ -7,24 +7,20 @@
 
 using namespace std;
 
-// =======================================================
-// 1. CẤU TRÚC DỮ LIỆU ĐĨA DVD (LƯU TRONG CÂY BST)
-// =======================================================
 struct ThongTinDia {
-    int maDia;                    // Khóa BST ID
-    string tenDia;                // Tên tác phẩm
-    string nhaCungCap;            // Nhà cung cấp
-    bool ChinhHang;             // Nguồn gốc bản quyền
-    string tinhTrang;      // Tình trạng: "Moi", "Tot", "TrayXuoc", "Hong"
-    int soLuongTon;               // Số lượng tồn khả dụng
-    int dinhMucToiThieu;          // Ngưỡng tồn an toàn
-    double giaThue;       // Giá thuê / ngày
-    double giaCaThitruong;         // Giá đối thủ lân cận
-    int soLuotThue;               // Lượt khách mượn 
-    int soLuotBan;                // Lượt mua
+    int maDia;                   
+    string tenDia;                
+    string nhaCungCap;            
+    bool ChinhHang;             
+    string tinhTrang;      
+    int soLuongTon;               
+    int dinhMucToiThieu;        
+    double giaThue;      
+    double giaCaThitruong;        
+    int soLuotThue;               
+    int soLuotBan;               
 };
 
-// Node của cây BST
  struct Node {
     ThongTinDia data;
     Node* left;
@@ -33,9 +29,7 @@ struct ThongTinDia {
     Node (ThongTinDia dia) : data(dia), left(NULL), right(NULL) {}
 };
 
-// =======================================================
-// 2. CÂY NHỊ PHÂN TÌM KIẾM (BST) QUẢN LÝ KHO ĐĨA
-// =======================================================
+
 class tree {
 private:
     Node* ThemDiaMoi(Node* p, ThongTinDia dia){
@@ -47,7 +41,29 @@ private:
         }
         return p;
     };
-    void DanhSachKhoDia(Node* p);
+    void DanhSachKhoDia(Node* p){
+    	if(p!=NULL){
+    		
+    		DanhSachKhoDia(p->left);
+    		
+    		cout << left
+    		     << "|" << setw(7) << p->data.maDia
+    		     << "|" << setw(16) << rutgon(p->data.tenDia,16)
+    		     << "|" << setw(14) << rutgon(p->data.nhaCungCap,14)
+    		     << "|" << setw(10) << p->data.tinhTrang
+    		     << "|" << setw(20) << LaChinhHang(p->data)
+    		     << "|" << setw(5) << p->data.soLuongTon
+    		     << "|" << setw(7) << p->data.dinhMucToiThieu
+    		     << "|" << setw(8) << p->data.giaThue
+    		     << "|" << setw(10) << p->data.giaCaThitruong
+    		     << "|" << setw(7) << p->data.soLuotThue
+    		     << "|" << setw(6) << p->data.soLuotBan
+    		     << "|" << setw(12) << DanhGiaDoUaChuong(p->data)
+    		     << "|" << setw(18) << DeXuatNhapHang(p->data) << "|\n";
+    		     
+    		DanhSachKhoDia(p->right);
+ 	    }
+	};
     Node* timkiem(Node* p, int maDia);
     void GiaiPhongCay(Node* p){
     	if(p!=NULL){
@@ -67,6 +83,12 @@ public:
     string DanhGiaDoUaChuong(const ThongTinDia dia);
     string DeXuatNhapHang(const ThongTinDia dia);
     string LaChinhHang(const ThongTinDia dia);
+    string rutgon(string s, size_t w) {
+        if (s.length() > w) {
+            return s.substr(0, w - 3) + "..."; 
+        }
+        return s;
+    }
 };
 // =======================================================
 // 3. QUẢN LÝ GIAO DỊCH THUÊ/TRẢ VÀ QUẦY THU NGÂN
