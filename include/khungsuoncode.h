@@ -7,9 +7,6 @@
 
 using namespace std;
 
-// =======================================================
-// 1. CẤU TRÚC DỮ LIỆU ĐĨA DVD (LƯU TRONG CÂY BST)
-// =======================================================
 struct ThongTinDia {
     int maDia;                    // Khóa BST ID
     string tenDia;                // Tên tác phẩm
@@ -18,48 +15,40 @@ struct ThongTinDia {
     string tinhTrang;      // Tình trạng: "Moi", "Tot", "TrayXuoc", "Hong"
     int soLuongTon;               // Số lượng tồn khả dụng
     int dinhMucToiThieu;          // Ngưỡng tồn an toàn
-    double giaThueTheoNgay;       // Giá thuê / ngày
-    double giaTiemLanCan;         // Giá đối thủ lân cận
+    double giaThue;       // Giá thuê / ngày
+    double giaCaThitruong;         // Giá đối thủ lân cận
     int soLuotThue;               // Lượt khách mượn 
     int soLuotBan;                // Lượt mua
 };
 
-// Node của cây BST
-struct Node {
+ struct Node {
     ThongTinDia data;
     Node* left;
     Node* right;
 
-    Node(ThongTinDia dia) : data(dia), left(NULL), right(NULL) {}
+    Node (ThongTinDia dia) : data(dia), left(NULL), right(NULL) {}
 };
 
-// =======================================================
-// 2. CÂY NHỊ PHÂN TÌM KIẾM (BST) QUẢN LÝ KHO ĐĨA
-// =======================================================
+
 class tree {
-    public:
+private:
     Node* root;
-
-    // Chèn đệ quy theo maDia
-    Node* chen(Node* p, ThongTinDia dl);
-
-    // Duyệt In-Order (LNR: Tăng dần theo mã đĩa)
-    void duyetInOrder(Node* p);
-
-    // Giải phóng cây 
-    void giaiPhongCay(Node* p);
+    Node* ThemDiaMoi(Node* p, ThongTinDia dia);
+    void DanhSachKhoDia(Node* p);
+    Node* timkiem(Node* p, int maDia);
+    void GiaiPhongCay(Node* p);
 
 public:
+	Node* root;
     tree() : root(NULL) {}
-    ~tree() { giaiPhongCay(root); }
-
-    void chen(ThongTinDia dl);
-
-    // Tìm kiếm phần tử theo mã đĩa O(log N)
-    Node* timKiem(int maDia);
-
-    // In danh mục sắp xếp tăng dần theo ID
-    void inDanhMucInOrder();
+    ~tree() { GiaiPhongCay(root); }
+    void ThemDiaMoi(ThongTinDia dia);
+    void DanhSachKhoDia();
+    Node* timkiem(int maDia);
+    Node* getRoot() const { return root; }
+    string DanhGiaDoUaChuong(const ThongTinDia dia);
+    string DeXuatNhapHang(const ThongTinDia dia);
+    bool LaChinhHang(const ThongTinDia dia);
 };
 // =======================================================
 // 3. QUẢN LÝ GIAO DỊCH THUÊ/TRẢ VÀ QUẦY THU NGÂN

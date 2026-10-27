@@ -1,5 +1,7 @@
 #include <iostream>
-#include "include/khungsuongcode.h"
+#include <string>
+#include <iomanip>
+#include "..\include\khungsuoncode.h"
 
 using namespace std;
 int main() {
@@ -7,11 +9,11 @@ int main() {
 
     int luaChon;
     do {
-        cout << "\n=============== HE THONG QUAN LY KHO DIA DVD (BST & QUEUE) ===============\n";
-        cout << "1. Xem danh muc kho hang (Duyet BST In-Order: Tang dan theo ID)\n";
-        cout << "2. Nhap kho dia DVD moi (BST Insert)\n";
+        cout << "\n=============== HE THONG QUAN LY KHO DIA DVD ===============\n";
+        cout << "1. Xem danh muc kho hang \n";
+        cout << "2. Nhap kho dia DVD moi \n";
         cout << "3. Quay thu ngan: Cho thue dia\n";
-        cout << "4. Quay thu ngan: Nhan tra dia (Tinh phat tre han & cap nhat kho)\n";
+        cout << "4. Quay thu ngan: Nhan tra dia\n";
         cout << "5. Xem so theo doi phieu thue khach hang\n";
         cout << "6. Xem thong ke tong quan doanh thu\n";
         cout << "0. Thoat chuong trinh\n";
@@ -79,5 +81,4 @@ int main() {
         }
     } while (luaChon != 0);
 
-    return 0;
 }
