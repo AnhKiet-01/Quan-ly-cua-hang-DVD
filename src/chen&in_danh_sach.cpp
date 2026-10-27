@@ -1,8 +1,8 @@
 #include<iostream>
 #include<string>
-using namespace std;
-#include "..\include\khungsuoncode.h"
 
+#include "..\include\khungsuoncode.h"
+using namespace std;
 string DanhGiaDoUaChuong (const ThongTinDia dia){
 	int diem = dia.soLuotThue + dia.soLuotBan*2;
 	if(diem >= 100) return "\nSieu Hot";
@@ -17,15 +17,16 @@ string DeXuatNhapHang(const ThongTinDia dia){
 		return "\n Nhap It";
 	}
 	return "\n Ton Kho An Toan";
-	
 }
 string LaChinhHang(const ThongTinDia dia){
 	if(!ChinhHang) return "\n Khong la Chinh Hang";
 	return "\n La chinh Hang";
 }
-
+void ThemDiaMoi(ThongTinDia dia){
+	Node* getroot = ThemDiaMoi(getroot, dia);
+}
 int main(){
 	tree t;
-	
+	t.
 	cout<< "\n do ua chuong: "<<t.DanhGiaDoUaChuong ();
 }
