@@ -20,8 +20,10 @@ string DeXuatNhapHang(const ThongTinDia dia){
 	
 }
 string LaChinhHang(const ThongTinDia dia){
-	if(ChinhHang) return "\n la Chinh Hang";
+	if(!ChinhHang) return "\n Khong la Chinh Hang";
+	return "\n La chinh Hang";
 }
+
 int main(){
 	tree t;
 	

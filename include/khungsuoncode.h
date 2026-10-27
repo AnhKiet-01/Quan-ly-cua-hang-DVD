@@ -41,7 +41,15 @@ private:
     Node* root;
 
     // Các hàm đệ quy chạy ngầm (Private Helper Functions)
-    Node* ThemDiaMoi(Node* p, ThongTinDia dia);
+    Node* ThemDiaMoi(Node* p, ThongTinDia dia){
+        if(p == NULL) return new Node(dia);
+        if(dia.maDia < p->data.madia) p->left = ThemDiaMoi(p->left, dia);
+        else if(dia.maDia > p->data.maDia) p->right = ThemDiaMoi(p->right, dia);
+        else{
+            cout << "\n Ma dia da ton tai. khong the the dia moi.\n"
+        }
+        return p;
+    };
     void DanhSachKhoDia(Node* p);
     Node* timkiem(Node* p, int maDia);
     void GiaiPhongCay(Node* p);
