@@ -37,17 +37,15 @@ struct Node {
 // 2. CÂY NHỊ PHÂN TÌM KIẾM (BST) QUẢN LÝ KHO ĐĨA
 // =======================================================
 class tree {
-    public:
-        Node* root;
-        void ThemDiaMoi(ThongTinDia dia);
-        void DanhSachKhoDia(Node* p);
-        Node* timkiem(Node* p);
-       string DanhDiaDoUaChuong( const ThongTinDia dia);
-       string DeXuatNhapHang(const ThongTinDia dia);
-       bool LaChinhHang(const ThongTinDia dia);
-       void GiaiPhongCay(Node* p);
+    Node* root;
+    void ThemDiaMoi(ThongTinDia dia);
+    void DanhSachKhoDia(Node* p);
+    Node* timkiem(Node* p);
+    string DanhDiaDoUaChuong( const ThongTinDia dia);
+    string DeXuatNhapHang(const ThongTinDia dia);
+    bool LaChinhHang(const ThongTinDia dia);
+    void GiaiPhongCay(Node* p);
 };
-
 // =======================================================
 // 3. QUẢN LÝ GIAO DỊCH THUÊ/TRẢ VÀ QUẦY THU NGÂN
 // =======================================================
