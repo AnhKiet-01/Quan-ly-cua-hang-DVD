@@ -1,5 +1,5 @@
-#ifndef KHUNG_SUONG_CODE_H
-#define KHUNG_SUONG_CODE_H
+#ifndef KHUNG_SUON_CODE_H
+#define KHUNG_SUON_CODE_H
 
 #include <iostream>
 #include <string>
