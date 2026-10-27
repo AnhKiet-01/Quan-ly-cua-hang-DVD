@@ -42,8 +42,8 @@ class tree {
     void DanhSachKhoDia(Node* p);
     Node* timkiem(Node* p);
     string DanhDiaDoUaChuong( const ThongTinDia dia);
-    sting DeXuatNhapHang(const thongTinDia dia);
-    bool ChinhHang(const ThongTinDia dia);
+    string DeXuatNhapHang(const ThongTinDia dia);
+    bool LaChinhHang(const ThongTinDia dia);
     void GiaiPhongCay(Node* p);
 };
 
