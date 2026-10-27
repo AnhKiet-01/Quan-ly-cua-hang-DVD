@@ -14,12 +14,12 @@ struct ThongTinDia {
     int maDia;                    // Khóa BST ID
     string tenDia;                // Tên tác phẩm
     string nhaCungCap;            // Nhà cung cấp
-    bool laChinhHang;             // Nguồn gốc bản quyền
-    string tinhTrangBaoQuan;      // Tình trạng: "Moi", "Tot", "TrayXuoc", "Hong"
+    bool ChinhHang;             // Nguồn gốc bản quyền
+    string tinhTrang;      // Tình trạng: "Moi", "Tot", "TrayXuoc", "Hong"
     int soLuongTon;               // Số lượng tồn khả dụng
     int dinhMucToiThieu;          // Ngưỡng tồn an toàn
-    double giaThueTheoNgay;       // Giá thuê / ngày
-    double giaTiemLanCan;         // Giá đối thủ lân cận
+    double giaThue;       // Giá thuê / ngày
+    double giaCaThitruong;         // Giá đối thủ lân cận
     int soLuotThue;               // Lượt khách mượn 
     int soLuotBan;                // Lượt mua
 };
