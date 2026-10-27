@@ -4,6 +4,26 @@ ThongTinDia DanhSachDia[] = {
    ({70, "Titanic", "Paramount", true, "Tot", 4, 2, 10000, 8500, 4, 1}),
    ({20, "Dia Cu 1990", "Dai Nam", false, "TrayXuoc", 1, 2, 5000, 3500, 0, 0})
    ({40, "Interstellar", "Warner", true, "Moi", 8, 3, 18000, 13500, 8, 2});
+    ({"10,The Dark Knight,Warner,1,Moi,12,3,20000,18000,80,45)},
+    ({"15,Avengers Endgame,Marvel,1,Tot,2,5,25000,20000,95,60)},
+    ({"25,Spider Man No Way Home,Sony,1,Moi,3,4,22000,19000,70,30)}
+    ({"35,Oppenheimer,Universal,1,Moi,10,3,25000,22000,55,25)},
+    ({"45,Barbie,Warner,1,Tot,6,3,18000,15000,40,15)}
+    ({"55,Spirited Away,Ghibli,1,Tot,4,2,15000,12000,35,10)}
+    ({"60,Your Name,Toho,1,Moi,7,2,16000,14000,50,20)}
+    ({"65,Parasite,CJ Ent,1,Tot,3,2,15000,13000,28)}
+   ({ "75,John Wick 4,Lionsgate,1,Moi,2,4,20000,18000,65,30)}
+    ({"80,The Matrix,Warner,1,Tot,5,2,12000,10000,18,5)}
+    ({"85,Forrest Gump,Paramount,1,Tot,6,2,12000,9500,15,3)}
+    ({"90,The Godfather,Paramount,1,Tot,4,2,14000,11000,22,6)}
+    ({"95,Pulp Fiction,Miramax,1,TrayXuoc,2,2,10000,8000,10,2\n")}
+    ({"12,Hai Tet 2005,Dong Do,0,Hong,1,2,3000,2000,1,0\n")}
+    ({"18,Nhac Vang Chon Loc,Lang Van,0,TrayXuoc,5,3,4000,3000,3,1)}
+    ({"22,Ca Nhac Xuan 2010,Rang Dong,0,Tot,8,3,5000,4000,2,0)}
+    ({"38,Fast and Furious 10,Universal,1,Tot,9,4,18000,16000,42,12)}
+    ({"48,Dune Part 2,Warner,1,Moi,1,5,25000,22000,85,40)}
+    ({"62,Coco,Disney,1,Moi,8,3,18000,15000,45,18)}
+    ({"88,Toy Story 4,Pixar,1,Tot,3,3,15000,12000,20,5";
 }
 for( const auto& dia: DanhSachDia){
    t.ThemDiaMoi(dia);
