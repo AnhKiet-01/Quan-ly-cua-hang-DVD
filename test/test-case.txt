@@ -1,0 +1,9 @@
+Kịch bản kiểm thử (Test Cases):
+
+Thử nhập nhiều đĩa vào kho xem cây BST có tự sắp xếp ID tăng dần không.
+
+Thử thuê đĩa để xem số lượng tồn có trừ đi không.
+
+Thử trả đĩa trễ ngày xem tiền phạt có tính chuẩn xác không.
+
+In thống kê doanh thu xem tổng tiền có khớp với các giao dịch vừa thực hiện không.
