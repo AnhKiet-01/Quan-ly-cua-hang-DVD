@@ -1,26 +1,41 @@
 #include "../include/khungsuongcode.h"
 
 // 1. CHỨC NĂNG CHO THUÊ ĐĨA
-bool QuanLyThuNgan::choThue(tree& khoDia, int maDia, string tenKhach, string sdt, int soNgay) {
-    PhieuThue* phieuMoi = new PhieuThue();
-    phieuMoi->maPhieu = ++maPhieuTuTang;
-    phieuMoi->tenKhachHang = tenKhach;
-    phieuMoi->soDienThoai = sdt;
-    phieuMoi->maDia = maDia;
-    phieuMoi->soNgayThue = soNgay;
-    phieuMoi->soNgayThucTe = 0;
-    phieuMoi->tongTien = 0.0;
-    phieuMoi->daTra = false;
+bool HeThongCuaHang::choThue(int maDia, string tenKhach, string sdt, int soNgay) {
+   Node* diaTimDuoc = khoDia.timkiem(maDia);
+    if (diaTimDuoc == NULL) {
+        cout << "\n[ERROR] Khong tim thay ma dia " << maDia << " trong kho!" << endl;
+        return false;
+    }
+
+    if (diaTimDuoc->data.soLuongTon <= 0) {
+        cout << "\n[WARNING] Dia " << diaTimDuoc->data.tenDia << " (Ma: " << maDia << ") da het hang trong kho!" << endl;
+        return false;
+    }
+
+    double donGia = diaTimDuoc->data.giaThue;
+
+    PhieuThue* phieuMoi = new PhieuThue(maPhieuTuTang++, tenKhach, sdt, maDia, soNgay, donGia);
 
     phieuMoi->tiepTheo = danhSachPhieu;
     danhSachPhieu = phieuMoi;
 
-    cout << "\n[SUCCESS] Cho thue dia thanh cong! Ma phieu: " << phieuMoi->maPhieu << endl;
+    diaTimDuoc->data.soLuongTon--;
+    diaTimDuoc->data.soLuotThue++;
+
+    cout << "\n================ CHO THUE DIA THANH CONG ================" << endl;
+    cout << "Ma phieu    : " << phieuMoi->maPhieu << endl;
+    cout << "Khach hang  : " << phieuMoi->tenKhachHang << " (" << phieuMoi->soDienThoai << ")" << endl;
+    cout << "Ten dia thue: " << diaTimDuoc->data.tenDia << " (Ma: " << maDia << ")" << endl;
+    cout << "Han thue    : " << soNgay << " ngay" << endl;
+    cout << "Tien dat coc: " << fixed << setprecision(0) << phieuMoi->tongTien << " VND" << endl;
+    cout << "==========================================================" << endl;
+
     return true;
 }
 
 // 2. CHỨC NĂNG NHẬN TRẢ ĐĨA & TÍNH PHẠT TRỄ HẠN
-bool QuanLyThuNgan::nhanTra(tree& khoDia, int maPhieu, int soNgayThucTe, string tinhTrangKhiTra) {
+bool HeThongCuaHang::nhanTra(int maPhieu, int soNgayThucTe, string tinhTrangKhiTra) {
     PhieuThue* temp = danhSachPhieu;
 
     while (temp != NULL) {
@@ -43,6 +58,15 @@ bool QuanLyThuNgan::nhanTra(tree& khoDia, int maPhieu, int soNgayThucTe, string 
             temp->tongTien = tienGoc + tienPhat;
             temp->daTra = true;
             tongDoanhThu += temp->tongTien;
+
+    
+            Node* diaTimDuoc = khoDia.timkiem(temp->maDia);
+            if (diaTimDuoc != NULL) {
+                diaTimDuoc->data.soLuongTon++;
+                if (!tinhTrangKhiTra.empty()) {
+                    diaTimDuoc->data.tinhTrang = tinhTrangKhiTra;
+                }
+            }
 
             cout << "\n================ HOAN TAT TRA DIA ================" << endl;
             cout << "Ma phieu: " << temp->maPhieu << " | Khach hang: " << temp->tenKhachHang << endl;
