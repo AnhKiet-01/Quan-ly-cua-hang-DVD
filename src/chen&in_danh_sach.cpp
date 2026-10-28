@@ -1,7 +1,7 @@
 #include <iostream>
 #include <string>
 #include <iomanip>
-#include "..\include\khungsuoncode.h"
+#include "../include/khungsuoncode.h"
 using namespace std;
 
 string tree::DanhGiaDoUaChuong(const ThongTinDia dia){
