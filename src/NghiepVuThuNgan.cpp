@@ -2,6 +2,7 @@
 #include <string>
 #include <iomanip>
 #include "../include/khungsuoncode.h"
+#include "../include/NghiepVuThuNgan.h"
 using namespace std;
 // 1. CHỨC NĂNG CHO THUÊ ĐĨA
 bool QuanLyThuNgan::choThue(tree& khoDia, int maDia, string tenKhach, string sdt, int soNgay) {
