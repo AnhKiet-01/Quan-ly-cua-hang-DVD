@@ -1,4 +1,4 @@
-ThongTinDia DanhSachDia[] = {
+
    ({50, "Inception", "Sony", true, "Moi", 5, 2, 15000, 13000, 12, 4}),
    ({30, "Avatar 2", "Fox", true, "Tot", 1, 3, 20000, 14000, 15, 6}),
    ({70, "Titanic", "Paramount", true, "Tot", 4, 2, 10000, 8500, 4, 1}),
@@ -24,8 +24,3 @@ ThongTinDia DanhSachDia[] = {
     ({"48,Dune Part 2,Warner,1,Moi,1,5,25000,22000,85,40)}
     ({"62,Coco,Disney,1,Moi,8,3,18000,15000,45,18)}
     ({"88,Toy Story 4,Pixar,1,Tot,3,3,15000,12000,20,5";
-}
-for( const auto& dia: DanhSachDia){
-   t.ThemDiaMoi(dia);
-}
-t.DanhSachKhoDia();
