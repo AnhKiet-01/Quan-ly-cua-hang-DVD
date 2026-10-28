@@ -6,7 +6,7 @@
 using namespace std;
 int main() {
     HeThongCuaHang heThong;
-
+    
     int luaChon;
     do {
         cout << "\n=============== HE THONG QUAN LY KHO DIA DVD ===============\n";
@@ -22,24 +22,25 @@ int main() {
 
         switch (luaChon) {
             case 1:
-                heThong.xemDanhMucKho();
+                heThong.khoDia.DanhSachKhoDia(); // Sửa thành chữ 'x' thường
                 break;
             case 2: {
                 ThongTinDia d;
                 cout << "\n--- NHAP THONG TIN DVD MOI ---\n";
                 cout << "\n-Nhap Ma DVD: "; cin >> d.maDia;
                 cin.ignore();
-                cout << "\n-Nhap Ten dia: "; getline(cin, d.tenDia);
-                cout << "\n-Nhap Nha cung cap: "; getline(cin, d.nhaCungCap);
-                cout << "\n-Nhap xuat su(co phai chinh hang khong)"; cin >> d.ChinhHang;
-                cout << "\n-Nhap tinh trang dia: "; cin>> d.tinhTrang;
-                cout << "\n-Nhap So luong ton: "; cin >> d.soLuongTon;
-                cout << "\n-Nhap Dinh muc toi thieu: "; cin >> d.dinhMucToiThieu;
-                cout << "\n-Nhap Gia thue/ngay (d): "; cin >> d.giaThue;
-                cout << "\n-Nhap Gia doi thu lan can (d): "; cin >> d.giaCaThitruong;
+                cout << "-Nhap Ten dia: "; getline(cin, d.tenDia);
+                cout << "-Nhap Nha cung cap: "; getline(cin, d.nhaCungCap);
+                cout << "-Nhap xuat su (1: Chinh hang | 0: Khong): "; cin >> d.ChinhHang;
+                cout << "-Nhap tinh trang dia (Moi/Tot/TrayXuoc/Hong): "; cin >> d.tinhTrang;
+                cout << "-Nhap So luong ton: "; cin >> d.soLuongTon;
+                cout << "-Nhap Dinh muc toi thieu: "; cin >> d.dinhMucToiThieu;
+                cout << "-Nhap Gia thue/ngay (d): "; cin >> d.giaThue;
+                cout << "-Nhap Gia doi thu lan can (d): "; cin >> d.giaCaThitruong;
                 d.soLuotThue = 0;
                 d.soLuotBan = 0;
-                heThong.themDiaMoi(d);
+                heThong.khoDia.ThemDiaMoi(d); // Sửa thành chữ 't' thường
+                cout << "=> Da them dia vao kho thanh cong!\n";
                 break;
             }
             case 3: {
@@ -81,4 +82,5 @@ int main() {
         }
     } while (luaChon != 0);
 
+    return 0;
 }

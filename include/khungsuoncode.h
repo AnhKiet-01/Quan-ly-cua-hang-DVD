@@ -70,15 +70,13 @@ struct PhieuThue {
 
 class HeThongCuaHang {
 private:
-    tree khoDia;
     PhieuThue* danhSachPhieu;
     int maPhieuTuTang;
     double tongDoanhThu;
 
 public:
     HeThongCuaHang() : danhSachPhieu(NULL), maPhieuTuTang(1), tongDoanhThu(0) {}
-    bool themDiaMoi(ThongTinDia dia);
-    void xemDanhMucKho();
+    tree khoDia;
     bool choThue(int maDia, string tenKhach, string sdt, int soNgay);
     bool nhanTra(int maPhieu, int soNgayThucTe, string tinhTrangKhiTra); 
     void inDanhSachPhieuThue();

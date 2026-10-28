@@ -4,7 +4,7 @@ name=QuanlyDVD
 Type=1
 Ver=2
 ObjFiles=
-Includes=
+Includes=D:\BTL-CTDL\Quan-ly-cua-hang-DVD\include
 Libs=
 PrivateResource=
 ResourceIncludes=
@@ -19,7 +19,7 @@ ObjectOutput=
 LogOutput=
 LogOutputEnabled=0
 OverrideOutput=0
-OverrideOutputName=
+OverrideOutputName=QuanlyDVD.exe
 HostApplication=
 UseCustomMakefile=0
 CustomMakefile=
@@ -39,14 +39,14 @@ Build=0
 LanguageID=1033
 CharsetID=1252
 CompanyName=
-FileVersion=
+FileVersion=1.0.0.0
 FileDescription=Developed using the Dev-C++ IDE
 InternalName=
 LegalCopyright=
 LegalTrademarks=
 OriginalFilename=
 ProductName=
-ProductVersion=
+ProductVersion=1.0.0.0
 AutoIncBuildNr=0
 SyncProduct=1
 
@@ -61,26 +61,6 @@ OverrideBuildCmd=0
 BuildCmd=
 
 [Unit2]
-FileName=src\Chen_&_In_Danh_Sach.cpp
-CompileCpp=1
-Folder=
-Compile=1
-Link=1
-Priority=1000
-OverrideBuildCmd=0
-BuildCmd=
-
-[Unit3]
-FileName=src\in_danh_sach_khach_hang_&_thong_ke.cpp
-CompileCpp=1
-Folder=
-Compile=1
-Link=1
-Priority=1000
-OverrideBuildCmd=0
-BuildCmd=
-
-[Unit4]
 FileName=src\NghiepVuThuNgan.cpp
 CompileCpp=1
 Folder=
@@ -90,8 +70,28 @@ Priority=1000
 OverrideBuildCmd=0
 BuildCmd=
 
-[Unit5]
+[Unit3]
 FileName=main.cpp
+CompileCpp=1
+Folder=
+Compile=1
+Link=1
+Priority=1000
+OverrideBuildCmd=0
+BuildCmd=
+
+[Unit4]
+FileName=src\Chen_va_In_Danh_Sach.cpp
+CompileCpp=1
+Folder=
+Compile=1
+Link=1
+Priority=1000
+OverrideBuildCmd=0
+BuildCmd=
+
+[Unit5]
+FileName=src\in_danh_sach_khach_hang_va_thong_ke.cpp
 CompileCpp=1
 Folder=
 Compile=1

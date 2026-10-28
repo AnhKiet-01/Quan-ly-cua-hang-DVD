@@ -26,7 +26,7 @@ void HeThongCuaHang::inDanhSachPhieuThue() {
     cout << setfill('-') << setw(120) <<'-' << setfill(' ')  <<"\n";
 
     int stt = 1;
-    for (PhieuThue* p = danhSachPhieu; p != NULL; p = p->tiepTheo) {
+    for (PhieuThue* p = danhSachPhieu; p != NULL; p = p->next) {
         double tienQuyDinh = p->soNgayThue * p->donGiaNgay;
 
         double phiTre = 0;
@@ -61,7 +61,7 @@ void HeThongCuaHang::inThongKe() {
     int tongPhieu = 0, dangMuon = 0, daTra = 0, traTreHan = 0;
     double tongDoanhThuCuaHang = 0;
  
-    for (PhieuThue* p = danhSachPhieu; p != NULL; p = p->tiepTheo) {
+    for (PhieuThue* p = danhSachPhieu; p != NULL; p = p->next) {
         tongPhieu++;
         double tienQuyDinh = p->soNgayThue * p->donGiaNgay;
  
