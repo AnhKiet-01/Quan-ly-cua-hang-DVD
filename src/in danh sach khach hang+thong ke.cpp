@@ -9,20 +9,21 @@ void HeThongCuaHang::inDanhSachPhieuThue() {
         cout << "\nChua co phieu thue nao.\n";
         return;
     }
-
     cout << "\n-DANH SACH KHACH THUE-\n";
-    cout << left << setw(5)  << "STT"
-         << setw(8)  << "Ma PT"
-         << setw(20) << "Khach hang"
-         << setw(13) << "SDT"
-         << setw(8)  << "Ma DVD"
-         << setw(10) << "Ngay thue"
-         << setw(10) << "Thuc te"
-         << setw(14) << "Tien quy dinh"
-         << setw(12) << "Phi tre"
-         << setw(16) << "Tien phai tra"
-         << "Trang thai\n";
-    cout << string(120, '-') << "\n";
+    cout << setfill('-') << setw(120) <<'-' << setfill(' ')  <<"\n";
+    cout << left 
+        << setw(5)  << "|STT"
+         << setw(8)  << "|Ma PT"
+         << setw(20) << "|Khach hang"
+         << setw(13) << "|SDT"
+         << setw(8)  << "|Ma DVD"
+         << setw(10) << "|Ngay thue"
+         << setw(10) << "|Thuc te"
+         << setw(14) << "|Tien quy dinh"
+         << setw(12) << "|Phi tre"
+         << setw(16) << "|Tien phai tra"
+         << setw(20) << "|Trang thai"<< "|\n";
+    cout << setfill('-') << setw(120) <<'-' << setfill(' ')  <<"\n";
 
     int stt = 1;
     for (PhieuThue* p = danhSachPhieu; p != NULL; p = p->tiepTheo) {
@@ -34,7 +35,8 @@ void HeThongCuaHang::inDanhSachPhieuThue() {
 
         double tienPhaiTra = tienQuyDinh + phiTre;
 
-        cout << left << setw(5)  << stt++
+        cout << left 
+            << setw(5)  << stt++
              << setw(8)  << p->maPhieu
              << setw(20) << p->tenKhachHang
              << setw(13) << p->soDienThoai
@@ -48,6 +50,7 @@ void HeThongCuaHang::inDanhSachPhieuThue() {
              << setw(12) << (long long)phiTre
              << setw(16) << (long long)tienPhaiTra
              << (p->daTra ? "Da tra" : "Dang muon (tam tinh)") << "\n";
+        cout << setfill('-') << setw(120) <<'-' << setfill(' ')  <<"\n";
     }
 }
 
@@ -76,12 +79,13 @@ void HeThongCuaHang::inThongKe() {
     }
  
     cout << "\n=============== THONG KE TONG QUAN ===============\n";
+    cout << setfill('-') << setw(120) <<'-' << setfill(' ')  <<"\n";
     cout << left << setw(45) << "Tong so phieu thue:"                 << tongPhieu << "\n";
     cout << left << setw(45) << "So phieu dang cho khach tra:"        << dangMuon << "\n";
     cout << left << setw(45) << "So phieu da tra:"                    << daTra << "\n";
     cout << left << setw(45) << "So phieu tra tre han:"               << traTreHan << "\n";
     cout << left << setw(45) << "Tong doanh thu cua hang (da tra):"   
          << (long long)tongDoanhThuCuaHang << " d\n";
+    cout << setfill('-') << setw(120) <<'-' << setfill(' ')  <<"\n";
 }
  
-#endif
