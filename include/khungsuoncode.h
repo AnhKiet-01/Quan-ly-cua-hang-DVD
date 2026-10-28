@@ -90,9 +90,7 @@ public:
         return s;
     }
 };
-// =======================================================
-// 3. QUẢN LÝ GIAO DỊCH THUÊ/TRẢ VÀ QUẦY THU NGÂN
-// =======================================================
+
 struct PhieuThue {
     int maPhieu;
     string tenKhachHang;
@@ -120,24 +118,11 @@ private:
 
 public:
     HeThongCuaHang() : danhSachPhieu(NULL), maPhieuTuTang(1), tongDoanhThu(0) {}
-
-    // Nhập đĩa vào kho (BST Insert) - SV1 làm
     bool themDiaMoi(ThongTinDia dia);
-
-    // Xem danh mục - SV1 làm
     void xemDanhMucKho();
-
-    // Nghiệp vụ cho thuê đĩa - SV2 làm
     bool choThue(int maDia, string tenKhach, string sdt, int soNgay);
-
-    // Nghiệp vụ nhận trả đĩa - SV2 làm
     bool nhanTra(int maPhieu, int soNgayThucTe, string tinhTrangKhiTra); 
-
-    // Xem danh sách phiếu thuê - SV3 làm
     void inDanhSachPhieuThue();
-
-    // Bảng thống kê tổng quan - SV3 làm
     void inThongKe();
 };
-
 #endif
