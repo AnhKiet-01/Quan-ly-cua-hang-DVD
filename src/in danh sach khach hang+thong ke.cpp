@@ -4,8 +4,6 @@
 #include "../include/khungsuoncode.h"
 using namespace std;
 
-//  IN DANH SACH PHIEU THUE (case 5)
-
 void HeThongCuaHang::inDanhSachPhieuThue() {
     if (danhSachPhieu == NULL) {
         cout << "\nChua co phieu thue nao.\n";
@@ -53,7 +51,7 @@ void HeThongCuaHang::inDanhSachPhieuThue() {
     }
 }
 
-//  THONG KE TONG QUAN (case 6)
+
 
 
 void HeThongCuaHang::inThongKe() {
