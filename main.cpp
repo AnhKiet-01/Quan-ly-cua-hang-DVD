@@ -27,16 +27,16 @@ int main() {
             case 2: {
                 ThongTinDia d;
                 cout << "\n--- NHAP THONG TIN DVD MOI ---\n";
-                cout << "Nhap Ma DVD (Khoa BST ID): "; cin >> d.maDia;
+                cout << "\n-Nhap Ma DVD: "; cin >> d.maDia;
                 cin.ignore();
-                cout << "Nhap Ten dia: "; getline(cin, d.tenDia);
-                cout << "Nhap Nha cung cap: "; getline(cin, d.nhaCungCap);
-                d.laChinhHang = true;
-                d.tinhTrangBaoQuan = "Moi";
-                cout << "Nhap So luong ton: "; cin >> d.soLuongTon;
-                cout << "Nhap Dinh muc toi thieu: "; cin >> d.dinhMucToiThieu;
-                cout << "Nhap Gia thue/ngay (d): "; cin >> d.giaThueTheoNgay;
-                cout << "Nhap Gia doi thu lan can (d): "; cin >> d.giaTiemLanCan;
+                cout << "\n-Nhap Ten dia: "; getline(cin, d.tenDia);
+                cout << "\n-Nhap Nha cung cap: "; getline(cin, d.nhaCungCap);
+                cout << "\n-Nhap xuat su(co phai chinh hang khong)"; cin >> d.ChinhHang;
+                cout << "\n-Nhap tinh trang dia: "; cin>> d.tinhTrang;
+                cout << "\n-Nhap So luong ton: "; cin >> d.soLuongTon;
+                cout << "\n-Nhap Dinh muc toi thieu: "; cin >> d.dinhMucToiThieu;
+                cout << "\n-Nhap Gia thue/ngay (d): "; cin >> d.giaThue;
+                cout << "\n-Nhap Gia doi thu lan can (d): "; cin >> d.giaCaThitruong;
                 d.soLuotThue = 0;
                 d.soLuotBan = 0;
                 heThong.themDiaMoi(d);
