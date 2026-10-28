@@ -1,3 +1,4 @@
+//mẫu so phieu thue nạp có sẵn//
 maPhieu,tenKhachHang,soDienThoai,maDia,soNgayThue,soNgayThucTe,donGiaNgay,tongTien,daTra
 {1, "Nguyen Van An", "0901234567", 10, 3, 3, 20000, 60000, true},
 {2, "Tran Thi Mai", "0912345678", 15, 2, 2, 25000, 50000, true},
