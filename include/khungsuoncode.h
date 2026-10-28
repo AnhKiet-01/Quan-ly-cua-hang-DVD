@@ -32,63 +32,22 @@ struct ThongTinDia {
 
 class tree {
 private:
-    Node* ThemDiaMoi(Node* p, ThongTinDia dia){
-        if(p == NULL) return new Node(dia);
-        if(dia.maDia < p->data.maDia) p->left = ThemDiaMoi(p->left, dia);
-        else if(dia.maDia > p->data.maDia) p->right = ThemDiaMoi(p->right, dia);
-        else{
-            cout << "\n Ma dia da ton tai. khong the the dia moi.\n";
-        }
-        return p;
-    };
-    void DanhSachKhoDia(Node* p){
-    	if(p!=NULL){
-    		
-    		DanhSachKhoDia(p->left);
-    		
-    		cout << left
-    		     << "|" << setw(7) << p->data.maDia
-    		     << "|" << setw(16) << rutgon(p->data.tenDia,16)
-    		     << "|" << setw(14) << rutgon(p->data.nhaCungCap,14)
-    		     << "|" << setw(10) << p->data.tinhTrang
-    		     << "|" << setw(20) << LaChinhHang(p->data)
-    		     << "|" << setw(5) << p->data.soLuongTon
-    		     << "|" << setw(7) << p->data.dinhMucToiThieu
-    		     << "|" << setw(8) << p->data.giaThue
-    		     << "|" << setw(10) << p->data.giaCaThitruong
-    		     << "|" << setw(7) << p->data.soLuotThue
-    		     << "|" << setw(6) << p->data.soLuotBan
-    		     << "|" << setw(12) << DanhGiaDoUaChuong(p->data)
-    		     << "|" << setw(18) << DeXuatNhapHang(p->data) << "|\n";
-    		     
-    		DanhSachKhoDia(p->right);
- 	    }
-	};
-    Node* timkiem(Node* p, int maDia);
-    void GiaiPhongCay(Node* p){
-    	if(p!=NULL){
-    		GiaiPhongCay(p->left);
-    		GiaiPhongCay(p->right);
-    		delete p;
-		}
-	};
-
-public:
 	Node* root;
+    Node* ThemDiaMoi(Node* p, ThongTinDia dia);
+    void DanhSachKhoDia(Node* p);
+    Node* timkiem(Node* p, int maDia);
+    void GiaiPhongCay(Node* p);
+public:
     tree() : root(NULL) {}
     ~tree() { GiaiPhongCay(root); }
+    Node* getroot() const {return root;}
     void ThemDiaMoi(ThongTinDia dia);
     void DanhSachKhoDia();
     Node* timkiem(int maDia);
     string DanhGiaDoUaChuong(const ThongTinDia dia);
     string DeXuatNhapHang(const ThongTinDia dia);
     string LaChinhHang(const ThongTinDia dia);
-    string rutgon(string s, size_t w) {
-        if (s.length() > w) {
-            return s.substr(0, w - 3) + "..."; 
-        }
-        return s;
-    }
+    string rutgon(string s, size_t w);
 };
 
 struct PhieuThue {
