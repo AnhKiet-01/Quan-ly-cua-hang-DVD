@@ -1,4 +1,4 @@
-
+#include "../include/khungsuongcode.h"
 
 // 1. CHỨC NĂNG CHO THUÊ ĐĨA
 bool QuanLyThuNgan::choThue(tree& khoDia, int maDia, string tenKhach, string sdt, int soNgay) {
