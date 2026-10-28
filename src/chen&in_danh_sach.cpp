@@ -50,20 +50,3 @@ void tree::DanhSachKhoDia(){
 	DanhSachKhoDia(root);
 	cout << setfill('-')<< setw(154)<< "-"<< setfill(' ')<<"\n";
 }
-
-int main(){
-	tree t;
-	
-	ThongTinDia danhsach[] = {
-	   {101, "Inception",     "Warner Bros",   true,  "Moi", 25, 20, 135000, 120000, 45, 30},
-	   {105, "Avatar 2",      "20th Century",  true,  "Tot", 5,  10, 150000, 140000, 80, 50},
-	   {102, "Interstellar",  "Paramount",     true,  "Moi", 18, 15, 130000, 125000, 20, 10}, 
-	   {108, "The Nun",       "New Line",      false, "Tot", 30, 10, 90000,  85000,  5,  2}, 
-	   {103, "Oppenheimer",   "Universal",     true,  "Moi", 12, 15, 140000, 135000, 60, 40}
-	};
-	
-	for( const auto& dia : danhsach){
-		t.ThemDiaMoi(dia);
-	}
-	t.DanhSachKhoDia();
-}
