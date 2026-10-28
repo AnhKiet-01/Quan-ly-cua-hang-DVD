@@ -1,0 +1,73 @@
+================================================================================
+                    GHI CHÚ DỰ ÁN: HỆ THỐNG QUẢN LÝ CỬA HÀNG DVD
+                        Môn học: Cấu trúc Dữ liệu & Giải thuật
+================================================================================
+
+1. PHÂN CÔNG NHIỆM VỤ THÀNH VIÊN
+--------------------------------------------------------------------------------
+- Trần Anh Kiệt-6651020047 (Nhóm trưởng):
+  + Cài đặt cấu trúc cây BST quản lý kho đĩa (file src/chen&in_danh_sach.cpp).
+  + Xây dựng cấu trúc cây, giải thuật thêm đĩa, giải phóng bộ nhớ (~tree).
+  + Xử lý định dạng bảng xuất danh mục kho DVD bằng iomanip và cắt chuỗi.
+  + Điều phối Git, xử lý Pull Request, Merge Conflict và ráp nối main.cpp.
+
+- Lê Tuấn Khang-6651020036 (Nghiệp vụ thu ngân):
+  + Quản lý luồng cho thuê và nhận trả đĩa DVD (file src/NghiepVuThuNgan.cpp).
+  + Kiểm tra trạng thái tồn kho, trừ kho khi thuê, cộng kho khi trả.
+  + Tính toán phí thuê và tiền phạt quá hạn thực tế.
+
+- Kỷ Nhật Khôn-6651020044 (Khách hàng & Báo cáo):
+  + Quản lý danh sách liên kết đơn phiếu thuê (src/in danh sach khach hang+thong ke.cpp).
+  + In danh sách khách hàng đang mượn đĩa / đã hoàn tất.
+  + Thống kê doanh thu thực tế và tổng tiền phạt phát sinh.
+
+-  Võ Nguyễn Thành Hưng-6651020029 (Tài liệu & Thuyết trình):
+  + Tổng hợp nội dung, vẽ sơ đồ cấu trúc dữ liệu BST và danh sách liên kết.
+  + Soạn thảo file Word báo cáo chính thức trong thư mục docx/.
+  + Chuẩn bị slide PowerPoint báo cáo trước hội đồng.
+
+2. CẤU TRÚC THƯ MỤC VÀ DỮ LIỆU
+--------------------------------------------------------------------------------
+- /data:
+  + danh_muc_dvd.csv: Chứa 25 đĩa mẫu (Mã, Tên, NCC, Tình trạng, Tồn kho, Giá...).
+  + phieu_thue.csv: Chứa 20 phiếu giao dịch mẫu (Đã trả, Đang thuê, Quá hạn).
+- /include:
+  + khungsuoncode.h: Khai báo struct ThongTinDia, Node, PhieuThue và class tree.
+- /src:
+  + Chứa toàn bộ các file hiện thực hàm chức năng riêng lẻ theo nhánh.
+- /docx:
+  + Thư mục lưu tài liệu báo cáo (.docx/.pdf) và slide thuyết trình (.pptx).
+- main.cpp:
+  + File chạy chính, nạp dữ liệu từ file/chuỗi và menu điều khiển console.
+
+3. HƯỚNG DẪN BIÊN DỊCH VÀ CHẠY THỬ
+--------------------------------------------------------------------------------
+- Cách 1 (Dùng dòng lệnh Terminal / VS Code):
+    g++ main.cpp src/*.cpp -I include -o main.exe
+    ./main.exe
+
+- Cách 2 (Dùng Dev-C++):
+  + Tạo Project C++ Console Application.
+  + Nhấp chuột phải vào Project -> Add to Project: chọn toàn bộ file trong src/ 
+    và file include/khungsuoncode.h.
+  + Nhấn F11 (Compile & Run).
+
+4. KỊCH BẢN DEMO KHI THUYẾT TRÌNH VỚI THẦY/CÔ
+--------------------------------------------------------------------------------
+- Bước 1: Nạp kho đĩa mẫu -> Chọn "In danh mục kho đĩa" để chứng minh cây BST 
+  tự động sắp xếp mã đĩa (maDia) tăng dần theo phép duyệt In-Order.
+- Bước 2: Thử thêm đĩa có mã trùng (ví dụ mã 50) -> Báo lỗi "Mã đã tồn tại".
+- Bước 3: Thuê đĩa mã 30 (Avatar 2) -> Cho thấy số lượng tồn kho tự động trừ 1.
+- Bước 4: Nhận trả đĩa mã phiếu số 3 -> Tính phụ thu trễ hạn (thuê 4 ngày nhưng thực tế 6 ngày).
+- Bước 5: In bảng đánh giá độ ưa chuộng & Đề xuất nhập hàng (Sieu Hot, E Am, Nhap Hang Gap).
+- Bước 6: In bảng thống kê tổng doanh thu thu ngân.
+
+5. CÁC ĐIỂM CẦN LƯU Ý KHI LÀM BÁO CÁO WORD
+--------------------------------------------------------------------------------
+- Phải chụp ảnh bảng console chạy thực tế (không dùng ảnh vẽ lại).
+- Nêu rõ độ phức tạp thuật toán:
+  + Tìm kiếm / Thêm vào BST trung bình: O(log N), xấu nhất: O(N).
+  + Duyệt toàn bộ kho đĩa: O(N).
+- Giải thích cơ chế giải phóng bộ nhớ động cây BST bằng Destructor (~tree) 
+  để tránh Memory Leak.
+================================================================================
