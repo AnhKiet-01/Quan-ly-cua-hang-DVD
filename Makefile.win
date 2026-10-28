@@ -1,0 +1,37 @@
+# Project: QuanlyDVD
+# Makefile created by Embarcadero Dev-C++ 6.3
+
+CPP      = g++.exe -D__DEBUG__
+CC       = gcc.exe -D__DEBUG__
+WINDRES  = windres.exe
+OBJ      = src/Chen_&_In_Danh_Sach.o src/in_danh_sach_khach_hang_&_thong_ke.o src/NghiepVuThuNgan.o main.o
+LINKOBJ  = src/Chen_&_In_Danh_Sach.o src/in_danh_sach_khach_hang_&_thong_ke.o src/NghiepVuThuNgan.o main.o
+LIBS     = -L"C:/Program Files (x86)/Embarcadero/Dev-Cpp/TDM-GCC-64/lib" -L"C:/Program Files (x86)/Embarcadero/Dev-Cpp/TDM-GCC-64/x86_64-w64-mingw32/lib" -static-libgcc -g3
+INCS     = -I"C:/Program Files (x86)/Embarcadero/Dev-Cpp/TDM-GCC-64/include" -I"C:/Program Files (x86)/Embarcadero/Dev-Cpp/TDM-GCC-64/x86_64-w64-mingw32/include" -I"C:/Program Files (x86)/Embarcadero/Dev-Cpp/TDM-GCC-64/lib/gcc/x86_64-w64-mingw32/9.2.0/include" -I"D:/BTL-CTDL/Quan-ly-cua-hang-DVD/include"
+CXXINCS  = -I"C:/Program Files (x86)/Embarcadero/Dev-Cpp/TDM-GCC-64/include" -I"C:/Program Files (x86)/Embarcadero/Dev-Cpp/TDM-GCC-64/x86_64-w64-mingw32/include" -I"C:/Program Files (x86)/Embarcadero/Dev-Cpp/TDM-GCC-64/lib/gcc/x86_64-w64-mingw32/9.2.0/include" -I"C:/Program Files (x86)/Embarcadero/Dev-Cpp/TDM-GCC-64/lib/gcc/x86_64-w64-mingw32/9.2.0/include/c++" -I"D:/BTL-CTDL/Quan-ly-cua-hang-DVD/include"
+BIN      = QuanlyDVD.exe
+CXXFLAGS = $(CXXINCS) -std=c++11 -g3
+CFLAGS   = $(INCS) -std=c++11 -g3
+DEL      = C:\Program Files (x86)\Embarcadero\Dev-Cpp\devcpp.exe INTERNAL_DEL
+
+.PHONY: all all-before all-after clean clean-custom
+
+all: all-before $(BIN) all-after
+
+clean: clean-custom
+	${DEL} $(OBJ) $(BIN)
+
+$(BIN): $(OBJ)
+	$(CPP) $(LINKOBJ) -o $(BIN) $(LIBS)
+
+src/Chen_&_In_Danh_Sach.o: src/Chen_&_In_Danh_Sach.cpp
+	$(CPP) -c src/Chen_&_In_Danh_Sach.cpp -o src/Chen_&_In_Danh_Sach.o $(CXXFLAGS)
+
+src/in_danh_sach_khach_hang_&_thong_ke.o: src/in_danh_sach_khach_hang_&_thong_ke.cpp
+	$(CPP) -c src/in_danh_sach_khach_hang_&_thong_ke.cpp -o src/in_danh_sach_khach_hang_&_thong_ke.o $(CXXFLAGS)
+
+src/NghiepVuThuNgan.o: src/NghiepVuThuNgan.cpp
+	$(CPP) -c src/NghiepVuThuNgan.cpp -o src/NghiepVuThuNgan.o $(CXXFLAGS)
+
+main.o: main.cpp
+	$(CPP) -c main.cpp -o main.o $(CXXFLAGS)

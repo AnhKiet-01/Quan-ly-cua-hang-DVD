@@ -1,5 +1,8 @@
-#include "../include/khungsuongcode.h"
-
+#include <iostream>
+#include <string>
+#include <iomanip>
+#include "../include/khungsuoncode.h"
+using namespace std;
 // 1. CHỨC NĂNG CHO THUÊ ĐĨA
 bool QuanLyThuNgan::choThue(tree& khoDia, int maDia, string tenKhach, string sdt, int soNgay) {
     PhieuThue* phieuMoi = new PhieuThue();

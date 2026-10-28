@@ -101,12 +101,12 @@ struct PhieuThue {
     double donGiaNgay;
     double tongTien;
     bool daTra;
-    PhieuThue* tiepTheo;
+    PhieuThue* next;
 
     PhieuThue(int mp, string ten, string sdt, int md, int ngay, double gia)
         : maPhieu(mp), tenKhachHang(ten), soDienThoai(sdt), maDia(md),
           soNgayThue(ngay), soNgayThucTe(0), donGiaNgay(gia),
-          tongTien(ngay * gia), daTra(false), tiepTheo(NULL) {}
+          tongTien(ngay * gia), daTra(false), next(NULL) {}
 };
 
 class HeThongCuaHang {
