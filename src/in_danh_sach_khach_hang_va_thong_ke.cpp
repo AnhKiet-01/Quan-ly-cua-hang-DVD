@@ -49,7 +49,7 @@ void HeThongCuaHang::inDanhSachPhieuThue() {
         cout <<"| " << setw(12) << (long long)tienQuyDinh
              <<"| " << setw(10) << (long long)phiTre
              <<"| " << setw(14) << (long long)tienPhaiTra
-             <<"|" << (p->daTra ? "Da tra" : "Dang muon (tam tinh)") << "|\n";
+             <<"|" <<setw(20) << (p->daTra ? "Da tra" : "Dang muon (tam tinh)") << "|\n";
         cout << setfill('-') << setw(138) <<'-' << setfill(' ')  <<"\n";
     }
 }
@@ -79,13 +79,13 @@ void HeThongCuaHang::inThongKe() {
     }
  
     cout << "\n=============== THONG KE TONG QUAN ================\n";
-    cout << setfill('-') << setw(52) <<'-' << setfill(' ')  <<"\n";
+    cout <<"+"<< setfill('-') << setw(51) <<'-' << setfill(' ')<<"+"  <<"\n";
     cout << left << setw(45) << "| Tong so phieu thue:"                 << tongPhieu << "     |\n";
-    cout << left << setw(45) << "| So phieu dang cho khach tra:"        << dangMuon << "     |\n";
+    cout << left << setw(46) << "| So phieu dang cho khach tra:"        << dangMuon << "     |\n";
     cout << left << setw(45) << "| So phieu da tra:"                    << daTra << "     |\n";
-    cout << left << setw(45) << "| So phieu tra tre han:"               << traTreHan << "     |\n";
-    cout << left << setw(45) << "| Tong doanh thu cua hang (da tra):"   
-         << (long long)tongDoanhThuCuaHang << " VND |\n";
-    cout << setfill('-') << setw(52) <<'-' << setfill(' ')  <<"\n";
+    cout << left << setw(46) << "| So phieu tra tre han:"               << traTreHan << "     |\n";
+    cout << left << setw(36) << "| Tong doanh thu cua hang (da tra):";   
+    cout << left << setw(11) << (long long)tongDoanhThuCuaHang << " VND |\n";
+    cout <<"+"<< setfill('-') << setw(51) <<'-' << setfill(' ')<<"+"  <<"\n";
 }
  

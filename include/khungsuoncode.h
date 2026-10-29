@@ -68,6 +68,8 @@ struct PhieuThue {
           tongTien(ngay * gia), daTra(false), next(NULL) {}
 };
 
+
+
 class HeThongCuaHang {
 private:
     PhieuThue* danhSachPhieu;
@@ -81,5 +83,6 @@ public:
     bool nhanTra(int maPhieu, int soNgayThucTe, string tinhTrangKhiTra); 
     void inDanhSachPhieuThue();
     void inThongKe();
+    void themphieumau(int mp, string ten, string sdt, int md, int songay, int ngaythuc, double gia, double tong, bool datra);
 };
 #endif

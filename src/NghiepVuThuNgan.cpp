@@ -67,8 +67,7 @@ bool HeThongCuaHang::nhanTra(int maPhieu, int soNgayThucTe, string tinhTrangKhiT
             }
 
             cout <<"+" <<setfill('-') << setw(57) <<'-' << setfill(' ')<<"+"  <<"\n";
-            cout << left
-                 << setw(13) <<"| Ma phieu: "; 
+            cout << left << setw(13) <<"| Ma phieu: "; 
 			cout << left
 			     << setw(44) <<temp->maPhieu<<" |\n";
 			cout << left
@@ -95,9 +94,8 @@ bool HeThongCuaHang::nhanTra(int maPhieu, int soNgayThucTe, string tinhTrangKhiT
 				     <<setw(17) << "| Phat tre han (" << (soNgayThucTe - temp->soNgayThue) << " ngay x 150%): "<<setw(20) << tienPhat << " VND |\n";
             } else {
                 cout << left
-				     << setw(26) << "| Tinh trang: Tra dung han ";
-				cout << left
-				     <<setw(28)<<"|\n";
+				     << setw(26) << "| Tinh trang: Tra dung han " ;
+				cout << setw(28) << "|\n";
             }
             cout << left
 			     << setw(13) << "| TONG THU: ";
@@ -112,4 +110,26 @@ bool HeThongCuaHang::nhanTra(int maPhieu, int soNgayThucTe, string tinhTrangKhiT
 
     cout << "\n[ERROR] Khong tim thay ma phieu: " << maPhieu << endl;
     return false;
+}
+void HeThongCuaHang::themphieumau(int mp, string ten, string sdt, int md, int songay, int ngaythuc, double gia, double tong, bool datra){
+    	PhieuThue* p =new PhieuThue(mp, ten, sdt, md, songay, gia);
+    	p->soNgayThucTe = ngaythuc;
+    	p->tongTien = tong;
+    	p->daTra = datra;
+    	if(danhSachPhieu == NULL) {
+    		danhSachPhieu = p;
+		}
+    	else{
+    		PhieuThue* t = danhSachPhieu;
+    		while(t->next != NULL){
+    		    t=t->next;
+		    }
+		    t->next =p;
+		}
+    	if(datra){
+    		tongDoanhThu += tong;
+		}
+		if(mp >= stt){
+			stt = mp + 1;
+		}
 }

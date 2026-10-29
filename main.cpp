@@ -4,9 +4,52 @@
 #include "../include/khungsuoncode.h"
 
 using namespace std;
+struct MauPhieu {
+    int mp;
+    string ten;
+    string sdt;
+    int md;
+    int soNgay;
+    int ngayThuc;
+    double gia;
+    double tong;
+    bool daTra;
+};
+void khoitaoPhieuThue(HeThongCuaHang& heThong) {
+	MauPhieu DanhSachPhieu[] = {
+	    {1, "Nguyen Van An", "0901234567", 10, 3, 3, 20000, 60000, true},
+        {2, "Tran Thi Mai", "0912345678", 15, 2, 2, 25000, 50000, true},
+        {3, "Le Hoang Nam", "0987654321", 25, 4, 6, 22000, 132000, true},
+        {4, "Pham Minh Tuan", "0933445566", 35, 2, 0, 25000, 50000, false},
+        {5, "Dang Thu Thao", "0977889900", 45, 3, 3, 18000, 54000, true},
+        {6, "Vo Quoc Bao", "0944556677", 55, 5, 7, 15000, 105000, true},
+        {7, "Doan Ngoc Hai", "0966112233", 60, 1, 0, 16000, 16000, false},
+        {8, "Bui Duc Thang", "0922334455", 65, 3, 3, 15000, 45000, true},
+        {9, "Hoang Yen Nhi", "0909998877", 75, 2, 5, 20000, 100000, true},
+        {10, "Truong Gia Huy", "0918273645", 80, 4, 0, 12000, 48000, false},
+        {11, "Nguyen Thanh Son", "0938475610", 85, 2, 2, 12000, 24000, true},
+        {12, "Vu Bich Phuong", "0981928374", 90, 3, 3, 14000, 42000, true},
+        {13, "Dinh Trong Tri", "0948572619", 95, 1, 3, 10000, 30000, true},
+        {14, "Lam My Duyen", "0976543210", 12, 2, 0, 3000, 6000, false},
+        {15, "Phan Tan Phat", "0965432109", 18, 4, 4, 4000, 16000, true},
+        {16, "Nguyen Kim Ngan", "0911223344", 22, 3, 0, 5000, 15000, false},
+        {17, "Ta Quang Buu", "0933112244", 38, 2, 2, 18000, 36000, true},
+        {18, "Chau Kien Phong", "0922446688", 48, 3, 5, 25000, 125000, true},
+        {19, "Ly Lan Anh", "0988776655", 62, 4, 4, 18000, 72000, true},
+        {20, "Huynh Tan Sang", "0908123456", 88, 2, 0, 15000, 30000, false}
+	};
+	int n = sizeof(DanhSachPhieu) / sizeof(DanhSachPhieu[0]);
+    for (int i = 0; i < n; i++) {
+        heThong.themphieumau(
+            DanhSachPhieu[i].mp, DanhSachPhieu[i].ten, DanhSachPhieu[i].sdt, DanhSachPhieu[i].md,
+            DanhSachPhieu[i].soNgay, DanhSachPhieu[i].ngayThuc, DanhSachPhieu[i].gia, DanhSachPhieu[i].tong, DanhSachPhieu[i].daTra
+        );
+    }
+}
 int main() {
     HeThongCuaHang heThong;
-    ThongTinDia DanhSach[] = {
+    khoitaoPhieuThue(heThong);
+    ThongTinDia DanhSachDia[] = {
         {50, "Inception", "Sony", true, "Moi", 5, 2, 15000, 13000, 12, 4},
         {30, "Avatar 2", "Fox", true, "Tot", 1, 3, 20000, 14000, 15, 6},
         {70, "Titanic", "Paramount", true, "Tot", 4, 2, 10000, 8500, 4, 1},
@@ -33,9 +76,12 @@ int main() {
         {62, "Coco", "Disney", true, "Moi", 8, 3, 18000, 15000, 45, 18},
         {88, "Toy Story 4", "Pixar", true, "Tot", 3, 3, 15000, 12000, 20, 5}
 	};
-	for(const auto& dia : DanhSach){
+	for(const auto& dia : DanhSachDia){
 		heThong.khoDia.ThemDiaMoi(dia);
 	}
+	
+	
+	
     int luaChon;
     do {
         cout << "\n=============== HE THONG QUAN LY KHO DIA DVD ===============\n";
