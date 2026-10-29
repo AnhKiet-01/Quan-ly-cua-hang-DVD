@@ -89,7 +89,7 @@ void tree::DanhSachKhoDia() {
         return;
     }
 
-    cout << setfill('-') << setw(154) << "-" << setfill(' ') << "\n";
+    cout <<"+"<< setfill('-') << setw(152) << "-" << setfill(' ')<<"+" << "\n";
     cout << left
          << "|" << setw(7)  << "maDia"
          << "|" << setw(16) << "TenDia"
@@ -104,11 +104,11 @@ void tree::DanhSachKhoDia() {
          << "|" << setw(6)  << "So ban"
          << "|" << setw(12) << "Do Ua Chuong"
          << "|" << setw(18) << "De xuat nhap hang" << "|\n";
-    cout << setfill('-') << setw(154) << "-" << setfill(' ') << "\n";
+    cout <<"+"<< setfill('-') << setw(152) << "-" << setfill(' ')<<"+" << "\n";
 
     DanhSachKhoDia(root);
 
-    cout << setfill('-') << setw(154) << "-" << setfill(' ') << "\n";
+    cout <<"+"<< setfill('-') << setw(152) << "-" << setfill(' ')<<"+" << "\n";
 }
 
 // 7. Giải phóng bộ nhớ cây

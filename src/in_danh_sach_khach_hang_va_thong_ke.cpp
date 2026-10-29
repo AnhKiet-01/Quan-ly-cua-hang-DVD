@@ -6,13 +6,13 @@ using namespace std;
 
 void HeThongCuaHang::inDanhSachPhieuThue() {
     if (danhSachPhieu == NULL) {
-        cout << "\nChua co phieu thue nao.\n";
+        cout << "\nChua co phieu thue nao\n";
         return;
     }
     cout << "\n-DANH SACH KHACH THUE-\n";
-    cout << setfill('-') << setw(138) <<'-' << setfill(' ')  <<"\n";
+    cout <<"+" << setfill('-') << setw(136) <<'-' << setfill(' ') <<"+"  <<"\n";
     cout << left 
-        << setw(5)  << "|STT"
+         << setw(5)  << "|STT"
          << setw(8)  << "|Ma PT"
          << setw(20) << "|Khach hang"
          << setw(13) << "|SDT"
@@ -23,7 +23,7 @@ void HeThongCuaHang::inDanhSachPhieuThue() {
          << setw(12) << "|Phi tre"
          << setw(16) << "|Tien phai tra"
          << setw(20) << "|Trang thai"<< " |\n";
-    cout << setfill('-') << setw(138) <<'-' << setfill(' ')  <<"\n";
+    cout <<"+" << setfill('-') << setw(136) <<'-' << setfill(' ') <<"+"  <<"\n";
 
     int stt = 1;
     for (PhieuThue* p = danhSachPhieu; p != NULL; p = p->next) {
@@ -50,7 +50,7 @@ void HeThongCuaHang::inDanhSachPhieuThue() {
              <<"| " << setw(10) << (long long)phiTre
              <<"| " << setw(14) << (long long)tienPhaiTra
              <<"|" <<setw(20) << (p->daTra ? "Da tra" : "Dang muon (tam tinh)") << "|\n";
-        cout << setfill('-') << setw(138) <<'-' << setfill(' ')  <<"\n";
+       cout <<"+" << setfill('-') << setw(136) <<'-' << setfill(' ') <<"+"  <<"\n";
     }
 }
 
