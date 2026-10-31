@@ -21,7 +21,7 @@ struct ThongTinDia {
     int soLuotBan;               
 };
 
- struct Node {
+struct Node {
     ThongTinDia data;
     Node* left;
     Node* right;

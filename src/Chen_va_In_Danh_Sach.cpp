@@ -18,7 +18,7 @@ Node* tree::ThemDiaMoi(Node* p, ThongTinDia dia) {
     } else if (dia.maDia > p->data.maDia) {
         p->right = ThemDiaMoi(p->right, dia);
     } else {
-        cout << "\nMa dia " << dia.maDia << " da ton tai. Khong the them!\n";
+        cout << "\nMa dia " << dia.maDia << " da ton tai. Khong the them\n";
     }
     return p;
 }
