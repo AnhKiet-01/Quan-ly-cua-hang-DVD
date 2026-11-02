@@ -43,7 +43,7 @@
 3. HƯỚNG DẪN BIÊN DỊCH VÀ CHẠY THỬ
 --------------------------------------------------------------------------------
 - Cách 1 (Dùng dòng lệnh Terminal / VS Code):
-    g++ main.cpp src/*.cpp -I include -o main.exe
+    g++ -std=c++11 main.cpp src/Chen_va_In_Danh_Sach.cpp src/in_danh_sach_khach_hang_va_thong_ke.cpp src/NghiepVuThuNgan.cpp -I include -o main.exe
     ./main.exe
 
 - Cách 2 (Dùng Dev-C++):

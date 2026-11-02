@@ -111,7 +111,7 @@ int main() {
                 cout << "-Nhap So luong ton: "; cin >> d.soLuongTon;
                 cout << "-Nhap Dinh muc toi thieu: "; cin >> d.dinhMucToiThieu;
                 cout << "-Nhap Gia thue/ngay (d): "; cin >> d.giaThue;
-                cout << "-Nhap Gia doi thu lan can (d): "; cin >> d.giaCaThitruong;
+                cout << "-Nhap Gia doi thu lan can (d): "; cin >> d.giaCaThitruong; cout<< " VND";
                 d.soLuotThue = 0;
                 d.soLuotBan = 0;
                 heThong.khoDia.ThemDiaMoi(d); 
