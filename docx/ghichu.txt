@@ -1,10 +1,10 @@
-================================================================================
-                    GHI CHÚ DỰ ÁN: HỆ THỐNG QUẢN LÝ CỬA HÀNG DVD
+
+                        DỰ ÁN: HỆ THỐNG QUẢN LÝ CỬA HÀNG DVD
                         Môn học: Cấu trúc Dữ liệu & Giải thuật
-================================================================================
+
 
 1. PHÂN CÔNG NHIỆM VỤ THÀNH VIÊN
---------------------------------------------------------------------------------
+
 - Trần Anh Kiệt-6651020047 (Nhóm trưởng):
   + Cài đặt cấu trúc cây BST quản lý kho đĩa (file src/chen&in_danh_sach.cpp).
   + Xây dựng cấu trúc cây, giải thuật thêm đĩa, giải phóng bộ nhớ (~tree).
@@ -27,7 +27,7 @@
   + Chuẩn bị slide PowerPoint báo cáo trước hội đồng.
 
 2. CẤU TRÚC THƯ MỤC VÀ DỮ LIỆU
---------------------------------------------------------------------------------
+
 - /data:
   + danh_muc_dvd.csv: Chứa 25 đĩa mẫu (Mã, Tên, NCC, Tình trạng, Tồn kho, Giá...).
   + phieu_thue.csv: Chứa 20 phiếu giao dịch mẫu (Đã trả, Đang thuê, Quá hạn).
@@ -41,7 +41,7 @@
   + File chạy chính, nạp dữ liệu từ file/chuỗi và menu điều khiển console.
 
 3. HƯỚNG DẪN BIÊN DỊCH VÀ CHẠY THỬ
---------------------------------------------------------------------------------
+
 - Cách 1 (Dùng dòng lệnh Terminal / VS Code):
     g++ -std=c++11 main.cpp src/Chen_va_In_Danh_Sach.cpp src/in_danh_sach_khach_hang_va_thong_ke.cpp src/NghiepVuThuNgan.cpp -I include -o main.exe
     ./main.exe
@@ -50,10 +50,10 @@
   + Tạo Project C++ Console Application.
   + Nhấp chuột phải vào Project -> Add to Project: chọn toàn bộ file trong src/ 
     và file include/khungsuoncode.h.
-  + Nhấn F11 (Compile & Run).
+  + Nhấn F11 
 
 4. KỊCH BẢN DEMO KHI THUYẾT TRÌNH VỚI THẦY/CÔ
---------------------------------------------------------------------------------
+
 - Bước 1: Nạp kho đĩa mẫu -> Chọn "In danh mục kho đĩa" để chứng minh cây BST 
   tự động sắp xếp mã đĩa (maDia) tăng dần theo phép duyệt In-Order.
 - Bước 2: Thử thêm đĩa có mã trùng (ví dụ mã 50) -> Báo lỗi "Mã đã tồn tại".
@@ -63,11 +63,12 @@
 - Bước 6: In bảng thống kê tổng doanh thu thu ngân.
 
 5. CÁC ĐIỂM CẦN LƯU Ý KHI LÀM BÁO CÁO WORD
---------------------------------------------------------------------------------
+
 - Phải chụp ảnh bảng console chạy thực tế (không dùng ảnh vẽ lại).
 - Nêu rõ độ phức tạp thuật toán:
   + Tìm kiếm / Thêm vào BST trung bình: O(log N), xấu nhất: O(N).
   + Duyệt toàn bộ kho đĩa: O(N).
 - Giải thích cơ chế giải phóng bộ nhớ động cây BST bằng Destructor (~tree) 
   để tránh Memory Leak.
-================================================================================
+6. TRAG WEB CHẠY MÔ PHỎNG DỰ ÁN:
+file:///C:/Users/admin/Downloads/h_th_ng_qu_n_l_kho_a_dvd_bst_queue_1.html.
