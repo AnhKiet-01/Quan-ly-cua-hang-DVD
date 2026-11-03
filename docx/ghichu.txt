@@ -52,7 +52,7 @@
     và file include/khungsuoncode.h.
   + Nhấn F11 
 
-4. KỊCH BẢN DEMO KHI THUYẾT TRÌNH VỚI THẦY/CÔ
+4. KỊCH BẢN DEMO KHI THUYẾT TRÌNH VỚI CÔ
 
 - Bước 1: Nạp kho đĩa mẫu -> Chọn "In danh mục kho đĩa" để chứng minh cây BST 
   tự động sắp xếp mã đĩa (maDia) tăng dần theo phép duyệt In-Order.
@@ -70,5 +70,7 @@
   + Duyệt toàn bộ kho đĩa: O(N).
 - Giải thích cơ chế giải phóng bộ nhớ động cây BST bằng Destructor (~tree) 
   để tránh Memory Leak.
+
 6. TRAG WEB CHẠY MÔ PHỎNG DỰ ÁN:
-file:///C:/Users/admin/Downloads/h_th_ng_qu_n_l_kho_a_dvd_bst_queue_1.html.
+
+LINK: file:///C:/Users/admin/Downloads/h_th_ng_qu_n_l_kho_a_dvd_bst_queue_1.html.
