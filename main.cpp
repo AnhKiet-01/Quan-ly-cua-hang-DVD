@@ -107,7 +107,7 @@ int main() {
                 cout << "-Nhap Ten dia: "; getline(cin, d.tenDia);
                 cout << "-Nhap Nha cung cap: "; getline(cin, d.nhaCungCap);
                 cout << "-Nhap xuat su (1: Chinh hang | 0: Khong): "; cin >> d.ChinhHang;
-                cout << "-Nhap tinh trang dia (Moi/Tot/TrayXuoc/Hong): "; cin >> d.tinhTrang;
+                cout << "-Nhap tinh trang dia (Moi/Tot/Tray Xuoc/Hong): "; cin >> d.tinhTrang;
                 cout << "-Nhap So luong ton: "; cin >> d.soLuongTon;
                 cout << "-Nhap Dinh muc toi thieu: "; cin >> d.dinhMucToiThieu;
                 cout << "-Nhap Gia thue/ngay (d): "; cin >> d.giaThue;

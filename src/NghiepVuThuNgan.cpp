@@ -54,17 +54,27 @@ bool HeThongCuaHang::nhanTra(int maPhieu, int soNgayThucTe, string tinhTrangKhiT
                 int soNgayTre = soNgayThucTe - temp->soNgayThue;
                 tienPhat = soNgayTre * (temp->donGiaNgay * 1.5);
             }
-
-            temp->tongTien = tienGoc + tienPhat;
-            temp->daTra = true;
-            tongDoanhThu += temp->tongTien;
+            double tienphatthu2=0;
             Node* p = khoDia.timkiem(temp->maDia);
             if (p != NULL) {
-                p->data.soLuongTon++;
+                
                 if (!tinhTrangKhiTra.empty()) {
                     p->data.tinhTrang = tinhTrangKhiTra;
+                    
+                    if(p->data.tinhTrang == "Moi" || p->data.tinhTrang == "Tot"){
+                    	tienphatthu2 = 0;
+                    	p->data.soLuongTon++;
+					}
+                    else if( p->data.tinhTrang == "Tray Xuoc"){
+                    	tienphatthu2 = 0.3 * p->data.giaCaThitruong;
+                    	p->data.soLuongTon++;
+					}  
+                    else tienphatthu2 =  p->data.giaCaThitruong;
                 }
             }
+            temp->tongTien = tienGoc + tienPhat + tienphatthu2;
+            temp->daTra = true;
+            tongDoanhThu += temp->tongTien;
 
             cout <<"+" <<setfill('-') << setw(57) <<'-' << setfill(' ')<<"+"  <<"\n";
             cout << left << setw(13) <<"| Ma phieu: " << setw(44) <<temp->maPhieu<<" |\n";
@@ -88,6 +98,17 @@ bool HeThongCuaHang::nhanTra(int maPhieu, int soNgayThucTe, string tinhTrangKhiT
                 cout << left << setw(30) << "| Tinh trang: Tra dung han " 
 				     << right << setw(30) << "|\n";
             }
+            if(tienphatthu2 > 0){
+            	cout << left << setw(17) << "| Phat tre han (";
+            	if(p->data.tinhTrang == "Tray Xuoc"){
+            		cout << left << setw(9) << p->data.tinhTrang << " = " << tienphatthu2;
+				}
+				else cout << left << setw(4) << "Hong = " << tienphatthu2;
+			}
+			else{
+				cout << left << setw(30) << "| Tinh trang: Moi hoac Tot " 
+				     << right << setw(30) << "|\n";
+			}
             cout << left << setw(13) << "| TONG THU: " << setw(40)<<temp->tongTien << " VND |\n";
             cout <<"+" <<setfill('-') << setw(57) <<'-' << setfill(' ')<<"+"  <<"\n";
 
