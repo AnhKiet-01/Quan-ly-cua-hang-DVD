@@ -1,7 +1,7 @@
 #include <iostream>
 #include <string>
 #include <iomanip>
-#include "../include/khungsuoncode.h"
+#include "include/khungsuoncode.h"
 
 using namespace std;
 struct MauPhieu {
@@ -47,7 +47,12 @@ void khoitaoPhieuThue(HeThongCuaHang& heThong) {
     }
 }
 int main() {
-    HeThongCuaHang heThong;
+    
+	int password;
+	cout << "nhap mat khau cua admin: ";
+	cin >> password;
+	if(password == 123456){
+		HeThongCuaHang heThong;
     khoitaoPhieuThue(heThong);
     ThongTinDia DanhSachDia[] = {
         {50, "Inception", "Sony", true, "Moi", 5, 2, 15000, 13000, 12, 4},
@@ -80,82 +85,86 @@ int main() {
 		heThong.khoDia.ThemDiaMoi(dia);
 	}
 	
-	
-	
-    int luaChon;
-    do {
-        cout << "\n=============== HE THONG QUAN LY KHO DIA DVD ===============\n";
-        cout << "1. Xem danh muc kho hang \n";
-        cout << "2. Nhap kho dia DVD moi \n";
-        cout << "3. Quay thu ngan: Cho thue dia\n";
-        cout << "4. Quay thu ngan: Nhan tra dia\n";
-        cout << "5. Xem so theo doi phieu thue khach hang\n";
-        cout << "6. Xem thong ke tong quan doanh thu\n";
-        cout << "0. Thoat chuong trinh\n";
-        cout << "Chon chuc nang: ";
-        cin >> luaChon;
+		int luaChon;
+        do {
+          cout << "\n=============== HE THONG QUAN LY KHO DIA DVD ===============\n";
+          cout << "1. Xem danh muc kho hang \n";
+          cout << "2. Nhap kho dia DVD moi \n";
+          cout << "3. Quay thu ngan: Cho thue dia\n";
+          cout << "4. Quay thu ngan: Nhan tra dia\n";
+          cout << "5. Xem so theo doi phieu thue khach hang\n";
+          cout << "6. Xem thong ke tong quan doanh thu\n";
+          cout << "0. Thoat chuong trinh\n";
+          cout << "Chon chuc nang: ";
+          cin >> luaChon;
 
-        switch (luaChon) {
-            case 1:
-                heThong.khoDia.DanhSachKhoDia(); 
-                break;
-            case 2: {
-                ThongTinDia d;
-                cout << "\n--- NHAP THONG TIN DVD MOI ---\n";
-                cout << "\n-Nhap Ma DVD: "; cin >> d.maDia;
-                cin.ignore();
-                cout << "-Nhap Ten dia: "; getline(cin, d.tenDia);
-                cout << "-Nhap Nha cung cap: "; getline(cin, d.nhaCungCap);
-                cout << "-Nhap xuat su (1: Chinh hang | 0: Khong): "; cin >> d.ChinhHang;
-                cout << "-Nhap tinh trang dia (Moi/Tot/Tray Xuoc/Hong): "; cin >> d.tinhTrang;
-                cout << "-Nhap So luong ton: "; cin >> d.soLuongTon;
-                cout << "-Nhap Dinh muc toi thieu: "; cin >> d.dinhMucToiThieu;
-                cout << "-Nhap Gia thue/ngay (d): "; cin >> d.giaThue;
-                cout << "-Nhap Gia doi thu lan can (d): "; cin >> d.giaCaThitruong; cout<< " VND";
-                d.soLuotThue = 0;
-                d.soLuotBan = 0;
-                heThong.khoDia.ThemDiaMoi(d); 
-                cout << "=> Da them dia vao kho thanh cong!\n";
-                break;
-            }
-            case 3: {
-                int maDia, soNgay;
-                string tenKhach, sdt;
-                cout << "\n--- TAO PHIEU CHO THUE DIA ---\n";
-                cout << "Nhap Ma DVD can thue: "; cin >> maDia;
-                cin.ignore();
-                cout << "Nhap Ten khach hang: "; getline(cin, tenKhach);
-                cout << "Nhap So dien thoai: "; getline(cin, sdt);
-                cout << "Nhap So ngay thue: "; cin >> soNgay;
-                heThong.choThue(maDia, tenKhach, sdt, soNgay);
-                break;
-            }
-            case 4: {
-                int maPhieu, songaythucte, chonTinhTrang;
-                string tinhTrang = "Tot";
-                cout << "\n--- NHAN TRA DIA ---\n";
-                cout << "Nhap Ma phieu thue: "; cin >> maPhieu;
-                cout << "Nhap So ngay thuc te da muon: "; cin >> songaythucte;
-                cout << "Chon chat luong khi tra (1. Tot | 2. TrayXuoc | 3. Hong): ";
-                cin >> chonTinhTrang;
-                if (chonTinhTrang == 2) tinhTrang = "TrayXuoc";
-                else if (chonTinhTrang == 3) tinhTrang = "Hong";
-                heThong.nhanTra(maPhieu, songaythucte, tinhTrang);
-                break;
-            }
-            case 5:
-                heThong.inDanhSachPhieuThue();
-                break;
-            case 6:
-                heThong.inThongKe();
-                break;
-            case 0:
-                cout << "Da thoat chuong trinh!\n";
-                break;
-            default:
-                cout << "Lua chon khong hop le, vui long chon lai!\n";
-        }
-    } while (luaChon != 0);
-
+          switch (luaChon) {
+              case 1:
+                  heThong.khoDia.DanhSachKhoDia(); 
+                  break;
+              case 2: {
+                  ThongTinDia d;
+                  cout << "\n--- NHAP THONG TIN DVD MOI ---\n";
+                  cout << "\n-Nhap Ma DVD: "; cin >> d.maDia;
+                  cin.ignore();
+                  cout << "-Nhap Ten dia: "; getline(cin, d.tenDia);
+                  cout << "-Nhap Nha cung cap: "; getline(cin, d.nhaCungCap);
+                  cout << "-Nhap xuat su (1: Chinh hang | 0: Khong): "; cin >> d.ChinhHang;
+                  cin.ignore(); 
+                  cout << "-Nhap tinh trang dia (Moi/Tot/Tray Xuoc/Hong): "; getline(cin, d.tinhTrang);
+                  cout << "-Nhap So luong ton: "; cin >> d.soLuongTon;
+                  cout << "-Nhap Dinh muc toi thieu: "; cin >> d.dinhMucToiThieu;
+                  cout << "-Nhap Gia thue/ngay (d): "; cin >> d.giaThue;
+                  cout << "-Nhap Gia doi thu lan can (d): "; cin >> d.giaCaThitruong; cout<< " VND";
+                  d.soLuotThue = 0;
+                  d.soLuotBan = 0;
+                  heThong.khoDia.ThemDiaMoi(d); 
+                  cout << "=> Da them dia vao kho thanh cong!\n";
+                  break;
+              }
+              case 3: {
+                  int maDia, soNgay;
+                  string tenKhach, sdt;
+                  cout << "\n--- TAO PHIEU CHO THUE DIA ---\n";
+                  cout << "Nhap Ma DVD can thue: "; cin >> maDia;
+                  cin.ignore();
+                  cout << "Nhap Ten khach hang: "; getline(cin, tenKhach);
+                  cout << "Nhap So dien thoai: "; getline(cin, sdt);
+                  cout << "Nhap So ngay thue: "; cin >> soNgay;
+                  heThong.choThue(maDia, tenKhach, sdt, soNgay);
+                  break;
+              }
+              case 4: {
+                  int maPhieu, songaythucte, chonTinhTrang;
+                  string tinhTrang = "Tot";
+                  cout << "\n--- NHAN TRA DIA ---\n";
+                  cout << "Nhap Ma phieu thue: "; cin >> maPhieu;
+                  cout << "Nhap So ngay thuc te da muon: "; cin >> songaythucte;
+                  cout << "Chon chat luong khi tra (1. Tot | 2. Tray Xuoc | 3. Hong): ";
+                  cin >> chonTinhTrang;
+                  if (chonTinhTrang == 2) tinhTrang = "Tray Xuoc";
+                  else if (chonTinhTrang == 3) tinhTrang = "Hong";
+                  else  tinhTrang = "Tot";
+                  heThong.nhanTra(maPhieu, songaythucte, tinhTrang);
+                  break;
+              }
+              case 5:
+                  heThong.inDanhSachPhieuThue();
+                  break;
+              case 6:
+                  heThong.inThongKe();
+                  break;
+              case 0:
+                  cout << "Da thoat chuong trinh!\n";
+                  break;
+              default:
+                  cout << "Lua chon khong hop le, vui long chon lai!\n";
+              }
+          } while (luaChon != 0);
+	}
+	  else{
+    	cout << "\n Mat Khau khong dung";
+    	return 0;
+	}
     return 0;
 }

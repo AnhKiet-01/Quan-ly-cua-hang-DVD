@@ -98,17 +98,18 @@ bool HeThongCuaHang::nhanTra(int maPhieu, int soNgayThucTe, string tinhTrangKhiT
                 cout << left << setw(30) << "| Tinh trang: Tra dung han " 
 				     << right << setw(30) << "|\n";
             }
-            if(tienphatthu2 > 0){
-            	cout << left << setw(17) << "| Phat tre han (";
-            	if(p->data.tinhTrang == "Tray Xuoc"){
-            		cout << left << setw(9) << p->data.tinhTrang << " = " << tienphatthu2;
-				}
-				else cout << left << setw(4) << "Hong = " << tienphatthu2;
-			}
-			else{
-				cout << left << setw(30) << "| Tinh trang: Moi hoac Tot " 
-				     << right << setw(30) << "|\n";
-			}
+            if (tienphatthu2 > 0 && p != NULL) {
+                if (p->data.tinhTrang == "Tray Xuoc") {
+                    cout << left << setw(35) << "| Phat hu hai (Tray Xuoc: 30%): "
+                         << left << setw(20) << tienphatthu2 << " VND |\n";
+                } else {
+                    cout << left << setw(31) << "| Phat hu hai (Hong 100% gia): "
+                         << left << setw(20) << tienphatthu2 << " VND |\n";
+                }
+            } else {
+                cout << left << setw(30) << "| Tinh trang dia: Nguyen ven"
+                     << right << setw(29) << "|\n";
+            }
             cout << left << setw(13) << "| TONG THU: " << setw(40)<<temp->tongTien << " VND |\n";
             cout <<"+" <<setfill('-') << setw(57) <<'-' << setfill(' ')<<"+"  <<"\n";
 
